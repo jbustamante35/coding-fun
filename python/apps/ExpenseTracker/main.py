@@ -1,23 +1,19 @@
 # Class for storing Expense objects
 from Expense import Expense
+from FileHandler import *
 
 # Read list of expenses and create Expense objects
 # Calculate monthly costs for each
 # Print out details of all Expenses
-expensesList = "expenses.csv"
+expensesList = '/home/jbustamante/Documents/coding-fun/data/expenses.csv'
 delim        = ','
 
+fin = open(expensesList, "r")
+fout = open('ExpensesManifest.txt', 'a+')
+exps = expensesFromFile(fin, delim)
 
-exp = Expense('Groceries', 'Monthly groceries', 'Food', 150, 'm')
-exp.calculateMonthly()
-exp.printExpense()
+for exp in exps:
+    write2file(exp, fout)
 
-
-
-
-def expensesFromFile(fin, delim):
-    
-    exps = makeExpense(str, delim)
-    return exps
-
-def makeExpense()
+fin.close()
+fout.close()
