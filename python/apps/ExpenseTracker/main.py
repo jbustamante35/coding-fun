@@ -1,18 +1,23 @@
 # Class for storing Expense objects
 from Expense import Expense
 
-class Noun:
-    def __init__(self):
-        self.person = 'Jim'
-        self.place = 'Wisconsin'
-        self.thing = 'dog'
+# Read list of expenses and create Expense objects
+# Calculate monthly costs for each
+# Print out details of all Expenses
+expensesList = "expenses.csv"
+delim        = ','
 
-
-
-arf = Noun()
-print(arf.person)
 
 exp = Expense('Groceries', 'Monthly groceries', 'Food', 150, 'm')
-name = exp.sayName()
-print(name)
-f = exp.calculateMonthly()
+exp.calculateMonthly()
+exp.printExpense()
+
+
+
+
+def expensesFromFile(fin, delim):
+    
+    exps = makeExpense(str, delim)
+    return exps
+
+def makeExpense()
