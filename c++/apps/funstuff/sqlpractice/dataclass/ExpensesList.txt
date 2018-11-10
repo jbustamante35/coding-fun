@@ -1,0 +1,30 @@
+Expense: "Pixel 2 XL"
+Desecription: "Phone Payment for Google Pixel 2 XL"
+Payment Interval: m
+Total Paid: 36.86
+Calculated Monthly: 36.86
+
+Expense: "Amazon"
+Desecription: "Online shopping service"
+Payment Interval: y
+Total Paid: 119.99
+Calculated Monthly: 9.99917
+
+Expense: "Eagle Heights Rent"
+Desecription: "Eagle Heights Rent|Parking|Utilities"
+Payment Interval: m
+Total Paid: 505.5
+Calculated Monthly: 505.5
+
+Expense: "McDonald's"
+Desecription: "The most glorious fast food in all the land"
+Payment Interval: d
+Total Paid: 8.39
+Calculated Monthly: 251.7
+
+Expense: "MoviePass"
+Desecription: "Nearly dead movie subscription service"
+Payment Interval: m
+Total Paid: 9.99
+Calculated Monthly: 9.99
+
