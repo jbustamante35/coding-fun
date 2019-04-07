@@ -67,12 +67,12 @@ double Expense::getMonthly() {
 }
 
 void Expense::printExpense(Expense ex) {
-    cout <<
-    "Expense: " << ex.getName() << "\n" <<
-    "Desecription: " << ex.getDescription() << "\n" <<
-    "Payment Interval: " << ex.getInterval() << "\n" <<
-    "Total Paid: " << ex.getTotal() << "\n" <<
-    "Calculated Monthly: " << ex.getMonthly() << "\n" <<
+    cout                   <<
+    "Expense: "            << ex.getName()        << "\n" <<
+    "Desecription: "       << ex.getDescription() << "\n" <<
+    "Payment Interval: "   << ex.getInterval()    << "\n" <<
+    "Total Paid: "         << ex.getTotal()       << "\n" <<
+    "Calculated Monthly: " << ex.getMonthly()     << "\n" <<
     endl;
 }
 

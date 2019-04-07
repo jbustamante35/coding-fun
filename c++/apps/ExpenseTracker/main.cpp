@@ -14,6 +14,7 @@ Expense makeExpense(string l, string d);
 int main() {
     string ffile = "/home/jbustamante/Documents/coding-fun/data/expenses.csv";
     string delim = ",";
+
     std::vector<Expense> expenses = expensesFromFile(ffile, delim);
 
     for (int n = 0; n < expenses.size(); n++) {
