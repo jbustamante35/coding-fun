@@ -1,0 +1,40 @@
+public class BMIcalculator {
+
+	// This is our main method.
+	public static void main(String[] args){
+
+		// initialize the three arrays as each having 5 elements 	
+    	
+		float[] weightArray = new float[5];
+		float[] heightArray = new float[5];
+		float[] BMIArray = new float[5];
+
+		// assign the values to the weight array
+		weightArray[0] = 85f;
+		weightArray[1] = 72f;
+		weightArray[2] = 68f;
+		weightArray[3] = 94f;
+		weightArray[4] = 78f;
+
+		//assign the values to the height array
+		heightArray[0] = 1.74f;
+		heightArray[1] = 1.80f;
+		heightArray[2] = 1.90f;
+		heightArray[3] = 1.84f;
+		heightArray[4] = 1.88f;
+
+		//compute the BMIs and store in the BMIArray
+		BMIArray[0] = weightArray[0]/(heightArray[0]*heightArray[0]);
+		BMIArray[1] = weightArray[1]/(heightArray[1]*heightArray[1]);
+		BMIArray[2] = weightArray[2]/(heightArray[2]*heightArray[2]);
+		BMIArray[3] = weightArray[3]/(heightArray[3]*heightArray[3]);
+		BMIArray[4] = weightArray[4]/(heightArray[4]*heightArray[4]);
+
+		// print the BMIs to the screen
+		System.out.println("The BMI of person 1 is: " + BMIArray[0] + ".");
+		System.out.println("The BMI of person 2 is: " + BMIArray[1] + ".");
+		System.out.println("The BMI of person 3 is: " + BMIArray[2] + ".");
+		System.out.println("The BMI of person 4 is: " + BMIArray[3] + ".");
+		System.out.println("The BMI of person 5 is: " + BMIArray[4] + ".");
+	}
+}

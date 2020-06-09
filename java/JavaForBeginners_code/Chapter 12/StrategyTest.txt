@@ -1,0 +1,10 @@
+public class StrategyTest {
+	public static void main(String[] args) {
+		EmailNotifyStrategy emailNotifier = new EmailNotifyStrategy();
+		
+		Customer a = new Customer(emailNotifier);
+		Customer b = new Customer(emailNotifier);
+		
+		a.notify("Your product has shipped!");
+	}
+}

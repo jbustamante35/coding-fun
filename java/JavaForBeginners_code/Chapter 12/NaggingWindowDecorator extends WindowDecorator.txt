@@ -1,0 +1,26 @@
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+public class NaggingWindowDecorator extends WindowDecorator {
+    public NaggingWindowDecorator(Window window) {
+        super(window);
+        // Add a simple message just to show the decorator is working:
+        getWindow().addPanel("Decorated with NaggingWindowDecorator");
+        getWindow().getJFrame().setAlwaysOnTop(true);
+        getWindow().getJFrame().setResizable(false);
+        // The code below will prevent users from minimizing the window
+        // by immediately re-opening minimized windows
+        // In a real life context, you’d of course resort to the full suite
+        // of Swing components as we’ve seen before, i.e. using JDialog
+        getWindow().getJFrame().addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+            }
+            // The following will prevent minimizing
+            @Override
+            public void windowIconified(WindowEvent we) {
+                getWindow().getJFrame().setState(JFrame.NORMAL);
+            }
+        });
+    }
+}

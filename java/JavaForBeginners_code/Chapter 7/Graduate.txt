@@ -1,0 +1,23 @@
+public class Graduate extends Student {
+	
+	private String thesis;
+	private Faculty advisor;
+	private static double minGrade = 0.8;
+	
+	public Graduate(String name) {
+		super(name);
+	}
+	
+	@Override
+	public double calculateGPA(){
+		double sum = 0;
+		double count = 0;
+		for (double grade : this.getGrades()){
+			if (grade > minGrade){
+				sum += grade;
+				count++;
+			}
+		}
+		return sum/count;
+	}
+}

@@ -1,0 +1,14 @@
+public class MatrixExample {
+
+	// This is our main method.
+	public static void main(String[] args){
+		// declare and initialize the matrix
+		int[][] matrix={{1, 2, 4},{2, 6, 8},{10, 20, 30}};
+
+		// print some of the matrix numbers to the screen
+		System.out.println("Element at row 0 and column 1 is: " + matrix[0][1] + ".");
+		System.out.println("Element at row 2 and column 2 is: " + matrix[2][2] + ".");
+		System.out.println("Element at row 2 and column 1 is: " + matrix[2][1] + ".");
+		System.out.println("Element at row 1 and column 0 is: " + matrix[1][0] + ".");
+	}
+}

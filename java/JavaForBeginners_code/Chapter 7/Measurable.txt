@@ -1,0 +1,10 @@
+/**
+* an An interface for measuring methods.
+*/
+public interface Measurable{
+	/** Returns the perimeter of an object */
+   double calculatePerimeter();
+
+	/** Returns the area of an object */
+	double calculateArea();
+}

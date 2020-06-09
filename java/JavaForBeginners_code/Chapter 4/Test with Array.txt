@@ -1,0 +1,14 @@
+class Test {
+	int[] array = new int[]{1,2,3};
+
+	static void increaseFirstInt(int[] anIntArray) {
+		anIntArray[0]++;
+	}
+
+	public static void main(String[] args) {
+		Test t = new Test();
+		System.out.println("First element in array is: "+t.array[0]);
+		Test.increaseFirstInt(t.array);
+		System.out.println("First element in array is now: "+t.array[0]);
+	}
+}

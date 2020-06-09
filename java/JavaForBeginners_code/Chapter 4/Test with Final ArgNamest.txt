@@ -1,0 +1,9 @@
+class ScopeTest {
+	void editNames(final String[] argNames) {
+		// Will not work due to final modifier:
+		// argNames = new String[]{"Caesar"};
+
+		// This will work:
+		argNames[0] = "Caesar";
+	}
+}

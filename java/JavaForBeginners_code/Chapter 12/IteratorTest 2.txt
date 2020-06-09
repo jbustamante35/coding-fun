@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class IteratorTest {
+	public static void main(String[] args) {
+		BackwardsList<String> list = new BackwardsList<>();
+		list.add("Bart");
+		list.add("Aimee");
+		list.add("Seppe");
+
+		Iterator<String> iterator = list.getBackwardsIterator();
+		while (iterator.hasNext()) {
+			String name = iterator.next();
+			System.out.println(name);
+			if (name.startsWith("A")) {
+				iterator.remove();
+				System.out.println(" ... removed");
+			}
+		}
+	}
+
+	public static class BackwardsList<T> extends ArrayList<T> {
+		public Iterator<T> getBackwardsIterator() {
+			final List<T> arrayList = this;
+			Iterator<T> iterator = new Iterator<T>() {
+				private int currentIndex = arrayList.size()-1;
+				@Override
+				public boolean hasNext() {
+					return currentIndex >= 0;
+				}
+				@Override
+				public T next() {
+					return arrayList.get(currentIndex--);
+				}
+				@Override
+				public void remove() {
+					arrayList.remove(currentIndex+1);
+				}
+			};
+			return iterator;
+		}
+	}
+}

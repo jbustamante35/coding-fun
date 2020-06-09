@@ -1,0 +1,50 @@
+package withwsdl;
+
+import java.io.IOException;
+import java.io.StringReader;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+import net.webservicex.StockQuote;
+import net.webservicex.StockQuoteSoap;
+
+
+public class ClientWithWSDL {
+	public static void main(String[] args) {
+		StockQuote service = new StockQuote();
+		StockQuoteSoap soapService = service.getStockQuoteSoap();
+		String stock = soapService.getQuote("IBM");
+	  
+		showSOAPResponse(stock);
+	}
+
+	private static void showSOAPResponse(String responseString) {
+		Document document = null;
+
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); 
+			DocumentBuilder builder = factory.newDocumentBuilder(); 
+			document = builder.parse(new InputSource(
+					new StringReader(responseString)));
+		} catch (SAXException | IOException | ParserConfigurationException e) {
+			e.printStackTrace();
+			return;
+		}
+
+		NodeList stockElements = document.getElementsByTagName("Stock");
+		for (int i = 0; i < stockElements.getLength(); i++) {
+			System.out.println("----- Stock nr. " + i + " ------");
+			NodeList infoElements = stockElements.item(i).getChildNodes();
+			for (int j = 0; j < infoElements.getLength(); j++) {
+				System.out.println(infoElements.item(j).getNodeName() + "\t --> " +
+						infoElements.item(j).getTextContent());
+			}
+		}
+	}
+}

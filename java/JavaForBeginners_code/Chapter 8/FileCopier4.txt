@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileCopier {
+	public static void main(String[] args) {
+		try (
+			Reader in = new BufferedReader(
+					new FileReader("groceries.txt"));
+			Writer out = new BufferedWriter(
+					new FileWriter("groceries (copy).txt"));
+		) {
+			String line;
+			while ((line = in.readLine()) != null) {
+				out.write(line + System.lineSeparator());
+				System.out.println(line);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

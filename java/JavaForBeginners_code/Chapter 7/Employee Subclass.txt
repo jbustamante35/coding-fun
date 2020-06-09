@@ -1,0 +1,34 @@
+public class Employee extends Person {
+	private Employee manager;
+	private int id;
+
+	public Employee(String name, Employee manager, int empID) {
+		super(name);
+		this.setManager(manager);
+		this.setEmployeeID(empID);
+	}
+
+	public Employee getManager() {
+		return manager;
+	}
+
+	public void setManager(Employee manager) {
+		this.manager = manager;
+	}
+
+	public int getEmployeeID() {
+		return id;
+	}
+
+	private void setEmployeeID(int employeeID) {
+		this.id = employeeID;
+	}
+
+	public String displayName() {
+		return "Employee: " + super.getName();
+	}
+
+	public String displayIdentification() {
+		return "Person: " + super.id + " has EmployeeID " + this.id;
+	}
+}

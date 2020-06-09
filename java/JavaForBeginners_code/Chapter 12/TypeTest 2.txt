@@ -1,0 +1,49 @@
+public class TypeTest {
+	public static void main(String[] args) {
+		// Product types now have a discount calculator field... 
+		BookDiscountCalculator bookDiscounter = new BookDiscountCalculator();
+		
+		ProductType bookType = new ProductType("Book");
+		bookType.addInstanceProperty("title", null);
+		bookType.addInstanceProperty("author", null);
+		bookType.addInstanceProperty("pages", 0);
+		bookType.addStaticProperty("discountCalculator", bookDiscounter);
+		
+		Product aBook = bookType.createProduct("My book", 44.99);
+		aBook.setProperty("title", aBook.getName());
+		aBook.setProperty("author", "Aimee, Bart and Seppe");
+		aBook.setProperty("pages", 540);
+		
+		Product anotherBook = bookType.createProduct("My second book", 244.99);
+		anotherBook.setProperty("title", anotherBook.getName());
+		anotherBook.setProperty("author", "Patternicus");
+		anotherBook.setProperty("pages", 800);
+		
+		showBook(aBook);
+		showBook(anotherBook);
+	}
+	
+	public static void showBook(Product bookProduct) {
+		System.out.format("Book '%s' from '%s' (%s pages) costs '%s' " + 
+			"--> after discount = %s%n",
+				bookProduct.getProperty("title"),
+				bookProduct.getProperty("author"),
+				bookProduct.getProperty("pages"),
+				bookProduct.getPrice(),
+				((BookDiscountCalculator) bookProduct
+					.getStaticProperty("discountCalculator"))
+						.getDiscountedPrice(bookProduct.getPrice())
+				);
+	}
+	
+	public static interface DiscountCalculator {
+		public double getDiscountedPrice(double originalPrice);
+	}
+	
+	public static class BookDiscountCalculator implements DiscountCalculator {
+		@Override
+		public double getDiscountedPrice(double originalPrice) {
+			return Math.max(10, originalPrice * 0.60 - 10);
+		}
+	}
+}

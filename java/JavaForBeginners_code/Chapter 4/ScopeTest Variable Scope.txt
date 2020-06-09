@@ -1,0 +1,18 @@
+class ScopeTest {
+	void makeA() {
+		int a = 5;
+	}
+
+	void readA() {
+		System.out.println("The value of a is: "+a);
+	}
+	
+	void doTheLoop() {
+		String[] names = new String[]{"Alice", "Bob", "Mia", "Marcus"};
+		for (int i = 0; i < names.length; i++) {
+			System.out.println("Name number "+i+" equals: "+names[i]);
+		}
+		System.out.println("The value of i is now: "+i); // Will not work
+	}
+
+}

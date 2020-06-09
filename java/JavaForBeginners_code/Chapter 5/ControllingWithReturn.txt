@@ -1,0 +1,52 @@
+import java.util.ArrayList;
+
+public class ControllingWithReturn {
+	// first example
+	// array of employee ID numbers, stored as Strings
+	static String[] employees = { "1485", "5498", "6412" };
+
+	// method to search for a specified employee ID
+	static boolean findEmployee(String employeeID) {
+		for (String emp : employees) {
+			if (emp.equals(employeeID)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	// second example
+	// arraylist of employee ID numbers, stored as Strings
+	static ArrayList<String> employeeList = new ArrayList<>();
+
+	// a method to add new Employees to the Employee array
+	static void addNewEmployee(String employeeID) {
+		if (employeeList.contains(employeeID)) {
+			return; // employee already exists
+		}
+		employeeList.add(employeeID);
+	}
+
+	public static void main(String[] args) {
+		String emp1 = "5498", emp2 = "1234";
+		if (findEmployee(emp1)) {
+			System.out.println(emp1 + " is in the database.");
+		} else {
+			System.out.println(emp1 + " is NOT in the database.");
+		}
+
+		if (findEmployee(emp2)) {
+			System.out.println(emp2 + " is in the database.");
+		} else {
+			System.out.println(emp2 + " is NOT in the database.");
+		}
+
+		addNewEmployee(emp2);
+
+		if (employeeList.contains(emp2)) {
+			System.out.println(emp2 + " is in the database.");
+		} else {
+			System.out.println(emp2 + " is NOT in the database.");
+		}
+	}
+}

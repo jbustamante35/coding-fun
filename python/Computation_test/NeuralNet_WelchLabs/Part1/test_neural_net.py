@@ -1,0 +1,17 @@
+from Neural_Network import Neural_Network
+import numpy as np 
+
+
+# X = (hours sleeping, hours studying), y = Score on test
+X = np.array(([3,5], [5,1], [10,2]), dtype=float)
+y = np.array(([75], [82], [93]), dtype=float)
+
+# Normalize
+X = X/np.amax(X, axis=0)
+y = y/100 #Max test score is 100
+
+
+NN   = Neural_Network()
+yHat = NN.forward(X)
+print(yHat)
+print(y) 

@@ -1,0 +1,81 @@
+./java/JavaForBeginners_code/Chapter 11/MultiThreadedFrame.class
+./java/JavaForBeginners_code/Chapter 11/MyFirstFrame.class
+./java/JavaForBeginners_code/Chapter 11/ScreenSaver.class
+./java/JavaForBeginners_code/Chapter 11/TabbedFrame.class
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility/.classpath
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility (Case Conflict)/bin/clients/ClientModule.class
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility (Case Conflict)/bin/database/DatabaseConnectionManager.class
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility (Case Conflict)/bin/domain/dao/EmployeeDAO.class
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility (Case Conflict)/bin/domain/Employee.class
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility (Case Conflict)/bin/reporting/EmployeeReportFormatter.class
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility (Case Conflict)/bin/reporting/FormatType.class
+./java/udemy_JavaOOP/Lecture 12 (Singleton Responsibility) (Case Conflict)/SingleResponsibility (Case Conflict)/bin/reporting/ReportFormatter.class
+./java/udemy_JavaOOP/Lecture 14 (Open Closed Principle) (Case Conflict)/OpenClosedPrinciple/.classpath
+./java/udemy_JavaOOP/Lecture 14 (Open Closed Principle) (Case Conflict)/OpenClosedPrinciple (Case Conflict)/bin/hospital/Doctor.class
+./java/udemy_JavaOOP/Lecture 14 (Open Closed Principle) (Case Conflict)/OpenClosedPrinciple (Case Conflict)/bin/hospital/EmergencyRoomProcess.class
+./java/udemy_JavaOOP/Lecture 14 (Open Closed Principle) (Case Conflict)/OpenClosedPrinciple (Case Conflict)/bin/hospital/Employee.class
+./java/udemy_JavaOOP/Lecture 14 (Open Closed Principle) (Case Conflict)/OpenClosedPrinciple (Case Conflict)/bin/hospital/HospitalManagement.class
+./java/udemy_JavaOOP/Lecture 14 (Open Closed Principle) (Case Conflict)/OpenClosedPrinciple (Case Conflict)/bin/hospital/Nurse.class
+./java/udemy_JavaOOP/Lecture 15 (Open Closed Homework) (Case Conflict)/OpenClosedPrincipleExercise/.classpath
+./java/udemy_JavaOOP/Lecture 15 (Open Closed Homework) (Case Conflict)/OpenClosedPrincipleExercise (Case Conflict)/bin/devices/Device.class
+./java/udemy_JavaOOP/Lecture 15 (Open Closed Homework) (Case Conflict)/OpenClosedPrincipleExercise (Case Conflict)/bin/devices/Projector.class
+./java/udemy_JavaOOP/Lecture 15 (Open Closed Homework) (Case Conflict)/OpenClosedPrincipleExercise (Case Conflict)/bin/devices/SurroundSoundSystem.class
+./java/udemy_JavaOOP/Lecture 15 (Open Closed Homework) (Case Conflict)/OpenClosedPrincipleExercise (Case Conflict)/bin/devices/TV.class
+./java/udemy_JavaOOP/Lecture 15 (Open Closed Homework) (Case Conflict)/OpenClosedPrincipleExercise (Case Conflict)/bin/remotes/RemoteControl.class
+./java/udemy_JavaOOP/Lecture 15 (Open Closed Homework) (Case Conflict)/OpenClosedPrincipleExercise (Case Conflict)/bin/user/Person.class
+./java/udemy_JavaOOP/Lecture 17 (Dependency Inversion Solution) (Case Conflict)/DependencyInversion/.classpath
+./java/udemy_JavaOOP/Lecture 17 (Dependency Inversion Solution) (Case Conflict)/DependencyInversion (Case Conflict)/bin/clients/DeviceFactory.class
+./java/udemy_JavaOOP/Lecture 17 (Dependency Inversion Solution) (Case Conflict)/DependencyInversion (Case Conflict)/bin/processes/GeneralManufacturingProcess.class
+./java/udemy_JavaOOP/Lecture 17 (Dependency Inversion Solution) (Case Conflict)/DependencyInversion (Case Conflict)/bin/processes/LaptopManufacturingProcess.class
+./java/udemy_JavaOOP/Lecture 17 (Dependency Inversion Solution) (Case Conflict)/DependencyInversion (Case Conflict)/bin/processes/SmartphoneManufacturingProcess.class
+./java/udemy_JavaOOP/Lecture 19 (Liskov Substitution) (Case Conflict)/LiskovSubstitution/.classpath
+./java/udemy_JavaOOP/Lecture 19 (Liskov Substitution) (Case Conflict)/LiskovSubstitution (Case Conflict)/bin/CourseInstructor.class
+./java/udemy_JavaOOP/Lecture 19 (Liskov Substitution) (Case Conflict)/LiskovSubstitution (Case Conflict)/bin/EnglishTeacher.class
+./java/udemy_JavaOOP/Lecture 19 (Liskov Substitution) (Case Conflict)/LiskovSubstitution (Case Conflict)/bin/MathTeacher.class
+./java/udemy_JavaOOP/Lecture 19 (Liskov Substitution) (Case Conflict)/LiskovSubstitution (Case Conflict)/bin/SchoolStaff.class
+./java/udemy_JavaOOP/Lecture 19 (Liskov Substitution) (Case Conflict)/LiskovSubstitution (Case Conflict)/bin/ScienceTeacher.class
+./java/udemy_JavaOOP/Lecture 19 (Liskov Substitution) (Case Conflict)/LiskovSubstitution (Case Conflict)/bin/SubstituteTeacher.class
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation/.classpath
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation (Case Conflict)/bin/Accounting.class
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation (Case Conflict)/bin/AccountsReceivable.class
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation (Case Conflict)/bin/Customer.class
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation (Case Conflict)/bin/CustomerTransaction.class
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation (Case Conflict)/bin/Product.class
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation (Case Conflict)/bin/ReportGenerator.class
+./java/udemy_JavaOOP/Lecture 21 (Interface Segregation) (Case Conflict)/InterfaceSegregation (Case Conflict)/bin/Reporting.class
+./java/udemy_JavaOOP/Lecture 24 Dependency Injection with Spring (Case Conflict)/dependency-injection-practice/.classpath
+./java/udemy_JavaOOP/Lecture 24 Dependency Injection with Spring (Case Conflict)/dependency-injection-practice/target/classes/clients/Client.class
+./java/udemy_JavaOOP/Lecture 24 Dependency Injection with Spring (Case Conflict)/dependency-injection-practice/target/classes/vehicles/Engine.class
+./java/udemy_JavaOOP/Lecture 24 Dependency Injection with Spring (Case Conflict)/dependency-injection-practice/target/classes/vehicles/Vehicle.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern/.classpath
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/clients/App.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/domain/Employee.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/domain/EmployeeDAO.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/observers/HRDepartment.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/observers/IObserver.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/observers/PayrollDepartment.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/subjects/EmployeeManagementSystem.class
+./java/udemy_JavaOOP/Lecture 26 (Observer Pattern Homework Solution) (Case Conflict)/ObserverPattern (Case Conflict)/bin/subjects/ISubject.class
+./java/udemy_JavaOOP/Lecture 28 (Coffee Shop Assignment) (Case Conflict)/solution-to-coffeeshop-problem/code/coffee-shop-solution/bin/client/CoffeeShop.class
+./java/udemy_JavaOOP/Lecture 28 (Coffee Shop Assignment) (Case Conflict)/solution-to-coffeeshop-problem/code/coffee-shop-solution/bin/coffeeshop/CoffeeAttendent.class
+./java/udemy_JavaOOP/Lecture 28 (Coffee Shop Assignment) (Case Conflict)/solution-to-coffeeshop-problem/code/coffee-shop-solution/bin/customers/Customer.class
+./java/udemy_JavaOOP/Lecture 28 (Coffee Shop Assignment) (Case Conflict)/solution-to-coffeeshop-problem/code/coffee-shop-solution/bin/customers/WaitingCustomer.class
+./java/udemy_JavaOOP/Lecture 28 (Coffee Shop Assignment) (Case Conflict)/solution-to-coffeeshop-problem/code/coffee-shop-solution/.classpath
+./java/udemy_JavaOOP/Lecture 29 (Builder Pattern) (Case Conflict)/BuilderPattern/.classpath
+./java/udemy_JavaOOP/Lecture 29 (Builder Pattern) (Case Conflict)/BuilderPattern (Case Conflict)/bin/App.class
+./java/udemy_JavaOOP/Lecture 29 (Builder Pattern) (Case Conflict)/BuilderPattern (Case Conflict)/bin/User$Builder.class
+./java/udemy_JavaOOP/Lecture 29 (Builder Pattern) (Case Conflict)/BuilderPattern (Case Conflict)/bin/User.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern/.classpath
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/App.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/Car.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/ElectricCar.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/Truck.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/Vehicle.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/VehicleFactory.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/VehicleType$1.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/VehicleType$2.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/VehicleType$3.class
+./java/udemy_JavaOOP/Lecture 30 Factory Pattern (Case Conflict)/FactoryMethodPattern (Case Conflict)/bin/VehicleType.class
+./java/udemy_JavaOOP/Lecture 32 Singleton Pattern (Case Conflict)/SingletonDesignPattern/.classpath
+./java/udemy_JavaOOP/Lecture 32 Singleton Pattern (Case Conflict)/SingletonDesignPattern (Case Conflict)/bin/Application.class
+./java/udemy_JavaOOP/Lecture 32 Singleton Pattern (Case Conflict)/SingletonDesignPattern (Case Conflict)/bin/PerformanceStage.class

@@ -1,0 +1,34 @@
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ManualLayoutFrame {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Manual layout frame");
+
+		frame.getContentPane().setLayout(null);
+		
+		JPanel bluePanel = new JPanel(), 
+				redPanel = new JPanel(), 
+				greenPanel = new JPanel();
+		bluePanel.setBackground(Color.blue);
+		redPanel.setBackground(Color.red);
+		greenPanel.setBackground(Color.green);
+
+		bluePanel.setBounds(100, 100, 100, 100);
+		redPanel.setBounds(50, 200, 400, 200);
+		greenPanel.setBounds(150, 100, 50, 50);
+		
+		frame.add(bluePanel);
+		frame.add(redPanel);
+		frame.add(greenPanel);
+		
+		frame.pack();
+		frame.setVisible(true);
+		
+		frame.setSize(500, 500);
+	}
+}

@@ -1,0 +1,88 @@
+import java.math.BigDecimal;
+
+public class CheckingAccount implements Accountable {
+	private String name;
+	private BigDecimal amount = new BigDecimal("0.00");
+	private static BigDecimal minBalance = new BigDecimal("100.00");
+
+	public CheckingAccount(String name, String amount) throws IllegalAccountOpening {
+		if (isValidDeposit(amount)) {
+			this.setName(name);
+			this.setAmount(new BigDecimal(amount));
+		} else {
+			throw new IllegalAccountOpening();
+		}
+	}
+
+	@Override
+	public boolean isValidDeposit(String deposit) {
+		BigDecimal temp;
+		try {
+			temp = new BigDecimal(deposit);
+		} catch (Exception e) {
+			return false;
+		}
+		if (temp.compareTo(new BigDecimal("0")) > 0) {
+			if (temp.add(this.getAmount()).compareTo(minBalance) > 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public void deposit(String deposit) throws IllegalDeposit {
+		if (isValidDeposit(deposit)) {
+			this.setAmount(this.getAmount().add(new BigDecimal(deposit)));
+		} else {
+			throw new IllegalDeposit();
+		}
+	}
+
+	@Override
+	public boolean isValidWithdrawal(String withdrawal) {
+		BigDecimal temp;
+		try {
+			temp = new BigDecimal(withdrawal);
+		} catch (Exception e) {
+			return false;
+		}
+		if (temp.compareTo(this.getAmount().add(minBalance)) < 0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public void withdraw(String withdrawal) throws IllegalWithdrawal {
+		if (isValidWithdrawal(withdrawal)) {
+			this.setAmount(this.getAmount()
+					.subtract(new BigDecimal(withdrawal)));
+		} else {
+			throw new IllegalWithdrawal();
+		}
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		this.name = name;
+	}
+
+	public BigDecimal getAmount() {
+		return amount;
+	}
+
+	private void setAmount(BigDecimal amount) {
+		this.amount = amount;
+	}
+
+	@Override
+	public String toString() {
+		return "CheckingAccount " + this.getName()
+				+ ": Balance = " + this.getAmount();
+	}
+
+}

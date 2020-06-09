@@ -1,0 +1,17 @@
+{
+  "head": "refs/heads/master",
+  "staged": "iha6a61oiq5qkuqg2tbo645llclkj1nd",
+  "working": "iha6a61oiq5qkuqg2tbo645llclkj1nd",
+  "merge": null,
+  "remotes": {
+    "origin": {
+      "name": "origin",
+      "url": "https://doltremoteapi.dolthub.com/jbustamante/myfirstdolt",
+      "fetch_specs": [
+        "refs/heads/*:refs/remotes/origin/*"
+      ],
+      "params": {}
+    }
+  },
+  "branches": {}
+}

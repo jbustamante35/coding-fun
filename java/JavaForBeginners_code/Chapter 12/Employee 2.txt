@@ -1,0 +1,44 @@
+public class Employee {
+	private List<Employee> employees;
+	private String name;
+	private double salary;
+	private boolean manager;
+	
+	public Employee(String name, double salary, boolean manager) {
+		this.employees = new ArrayList<>();
+		this.name = name;
+		this.salary = salary;
+		this.manager = manager;
+	}
+	
+	public void addEmployee(Employee employee) {
+		if (isManager())
+			employees.add(employee);
+	}
+	
+	public void removeEmployee(Employee employee) {
+		if (isManager())
+			employees.remove(employee);
+	}
+	
+	public Employee getEmployee(int i) {
+		return employees.get(i);
+	}
+	
+	public int getNrEmployees() {
+		return employees.size();
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+	
+	public double getSalary() {
+		return salary;
+	}
+	
+	public boolean isManager() {
+		return manager;
+	}
+}

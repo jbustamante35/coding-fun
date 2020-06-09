@@ -1,0 +1,15 @@
+package withwsdl;
+
+import net.webservicex.StockQuote;
+import net.webservicex.StockQuoteSoap;
+
+public class ClientWithWSDL {
+	public static void main(String[] args) {
+		StockQuote service = new StockQuote();
+		StockQuoteSoap soapService = service.getStockQuoteSoap();
+
+		String stock = soapService.getQuote("IBM");
+
+		System.out.println(stock);
+	}
+}

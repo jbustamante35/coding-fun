@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<books>
+	<book>
+		<title>My First Book</title>
+			<authors>
+				<author>
+					<firstname>Anton</firstname>
+					<lastname>Anonymous</lastname>
+				</author>
+			</authors>
+	</book>
+	<book>
+		<title>Another Book</title>
+			<authors>
+				<author>
+					<firstname>Anton</firstname>
+					<lastname>Anonymous</lastname>
+				</author>
+				<author>
+					<firstname>Bruce</firstname>
+					<lastname>McAuthor</lastname>
+				</author>
+			</authors>
+	  </book>
+</books>

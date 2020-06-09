@@ -1,0 +1,9 @@
+public class EmailNotifyStrategy implements NotifyStrategy {
+
+	@Override
+	public void notify(Customer customer, String message) {
+		// Send mail to customer.getEmail();
+		
+		System.out.println("Sending an email: "+message);
+	}
+}

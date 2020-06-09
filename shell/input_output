@@ -1,0 +1,35 @@
+#!/bin/bash
+
+read -p "What is your name? " nm
+echo "Hello there! General $nm!"
+
+read -p "What is your age? " qst
+if [ $qst -ge 16 ]
+then
+	echo "You can drive"
+elif [ $qst -eq 15 ]
+then
+	echo "You can drive next year"
+else
+	echo "You can't drive"
+fi
+
+read -p "Enter a number: " num
+if ((num == 10)); then
+	echo "$num == 10"
+fi
+
+if ((num > 10)); then
+	echo "$num > 10"
+else 
+	echo "$num < 10"
+fi
+
+if (( ((num % 2)) == 0)); then
+	echo "$num is even"
+fi
+
+touch samp_file && vim samp_file
+[ -d samp_dir ] || mkdir samp_dir
+
+

@@ -1,0 +1,45 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class AccountWindow extends JFrame {
+	private JTextField funds, add;
+	private JButton addButton;
+	private AccountController controller;
+	
+	public AccountWindow() {
+		this.setSize(400, 120);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new FlowLayout());
+		
+		funds = new JTextField(30);
+		add = new JTextField(30);
+		addButton = new JButton("Add funds");
+		
+		funds.setEditable(false);
+		addButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if (controller != null)
+					controller.addFunds(Double.parseDouble(add.getText()));
+			}
+		});
+		
+		this.add(funds);
+		this.add(add);
+		this.add(addButton);
+	}
+	
+	public void updateView(double funds) {
+		this.funds.setText("Your funds: "+funds);
+		this.add.setText("");
+	}
+	
+	public void setController(AccountController controller) {
+		this.controller = controller;
+	}
+}

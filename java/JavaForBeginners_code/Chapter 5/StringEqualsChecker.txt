@@ -1,0 +1,36 @@
+public class StringEqualsChecker {
+	public static void main(String[] args) {
+		String abc = "the letters a, b and c";
+		if (abc == "the letters a, b and c") {
+			System.out.println("Strings are equal");
+		}
+
+		String xyz = "the letters a, b and c";
+
+		if (abc == xyz) {
+			System.out.println("Refers to same string");
+		} else {
+			System.out.println("Refers to different strings");
+		}
+		if (abc.equals(xyz)) {
+			System.out.println("Contents of both strings are same");
+		} else {
+			System.out.println("Contents of strings are different");
+		}
+
+		xyz = "the letters a, b";
+		xyz = xyz + " and c";
+
+		if (abc == xyz) {
+			System.out.println("Refers to same string");
+		} else {
+			System.out.println("Refers to different strings");
+		}
+		if (abc.equals(xyz)) {
+			System.out.println("Contents of both strings are same");
+		} else {
+			System.out.println("Contents of strings are different");
+		}
+
+	}
+}

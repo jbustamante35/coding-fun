@@ -1,0 +1,19 @@
+// File Book.java:
+class Book {
+	final String title;
+	final int releaseYear;
+	int copiesSold;
+	
+	Book(String t, int r) {
+		title = t;
+		releaseYear = r;
+	}
+	
+	void sell(int nrCopies) {
+		copiesSold += nrCopies;
+	}
+	
+	int nrCopiesSold() {
+		return copiesSold;
+	}
+}

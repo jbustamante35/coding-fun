@@ -1,0 +1,6 @@
+apples, 5.33
+bananas, 4.61
+water, 1.00
+orange juice, 2.50
+milk, 3.20
+bread, 1.11

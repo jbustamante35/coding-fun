@@ -1,0 +1,12 @@
+public class PersonProgram {
+
+	public static void main(String[] args){
+		Student john = new Master("John Adams");
+		john.setGrades(0.75,0.82,0.91,0.69,0.79);
+		Student anne = new Associate("Anne Philips");
+		anne.setGrades(0.75,0.82,0.91,0.69,0.79);
+
+		System.out.println(john.getName() + ": " + john.calculateGPA());
+		System.out.println(anne.getName() + ": " + anne.calculateGPA());
+	}
+}

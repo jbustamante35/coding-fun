@@ -1,0 +1,35 @@
+/** This class allows you to calculate the <b> <u> BMI </u></b> using the inputs:
+ * <ul>
+ * <li> weight; </li>
+ * <li> height. </li>
+ * </ul>
+ * See <a href="http://en.wikipedia.org/wiki/Body_mass_index">Wikipedia</a> for
+ * more information.
+ * @author Bart Baesens
+ */
+public class BMICalculator {
+
+	// declare variables
+	static double weight;
+	static double height;
+	static double BMI;
+
+	// This is our main method.
+	public static void main(String[] args){
+		weight=60;
+		height=1.70;
+
+		/* Here, we call the method calculateBMI which will
+		 * calculate the BMI
+		 */
+		calculateBMI();
+
+		// print BMI to screen
+		System.out.println("Your BMI is " + BMI +".");
+    }
+
+    // method calculating BMI
+	public static void calculateBMI(){
+		BMI = weight/(height*height);
+	}
+}

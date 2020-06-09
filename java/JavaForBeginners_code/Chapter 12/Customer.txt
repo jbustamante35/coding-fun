@@ -1,0 +1,13 @@
+public class Customer {
+	private NotifyStrategy notificationPreference;
+	
+	public Customer(NotifyStrategy notificationPreference) {
+		this.notificationPreference = notificationPreference;
+	}
+	
+	// ...
+	
+	public void notify (String message) {
+		notificationPreference.notify(this, message);
+	}
+}

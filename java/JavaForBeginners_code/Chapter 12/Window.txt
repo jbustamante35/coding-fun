@@ -1,0 +1,6 @@
+import javax.swing.JFrame;
+public interface Window {
+	public void setTitle(String title);
+	public void addPanel(String message);
+	public JFrame getJFrame();
+}

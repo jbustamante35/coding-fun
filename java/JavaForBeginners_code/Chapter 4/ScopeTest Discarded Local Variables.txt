@@ -1,0 +1,9 @@
+class ScopeTest {
+	void scopeTest(int a) {
+		int b = a + 10;
+		for (int c = 0; c < 10; c++) {
+			int d = c + 3;
+			b = b + 1;
+		}
+	}
+}

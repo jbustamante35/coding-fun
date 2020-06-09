@@ -1,0 +1,12 @@
+public class StringComparison {
+	public static void main(String[] args) {
+		String employee1 = "Addams";
+		String employee2 = "Brown";
+		String employee3 = "O’Connor";
+		String manager = "Brown";
+
+		System.out.println(employee1.compareTo(employee2));
+		System.out.println(employee3.compareTo(employee2));
+		System.out.println(employee2.compareTo(manager));
+	}
+}

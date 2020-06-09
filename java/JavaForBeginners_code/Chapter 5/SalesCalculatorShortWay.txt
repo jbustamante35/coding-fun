@@ -1,0 +1,15 @@
+public class SalesCalculatorShortWay {
+	public static void main(String[] args) {
+		int[] sales2014 = { 500, 720, 515, 377, 400, 435, 510, 1010, 894, 765,
+				992, 1125 };
+		int[] staff2014 = { 7, 5, 5, 5, 5, 6, 6, 7, 7, 8, 9, 9 };
+		int[] salesPerStaff = new int[12];
+		int totalSales2014 = 0;
+
+		for (int i = 0; i < sales2014.length; i++) {
+			salesPerStaff[i] = sales2014[i] / staff2014[i];
+			totalSales2014 = totalSales2014 + sales2014[i];
+		}
+		System.out.println("2014 Total Sales: $" + totalSales2014);
+	}
+}

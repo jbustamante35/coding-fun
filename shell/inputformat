@@ -1,0 +1,22 @@
+#!/bin/bash
+
+OIFS="$IFS"
+
+IFS=","
+
+read -p "Enter 2 numbers (a,b) " a b
+
+a=${a//[[:blank]]/}
+b=${b//[[:blank]]/}
+sum=$((a+b))
+echo "$a + $b = $sum"
+
+IFS="$OIFS"
+
+nm="Julian Bustamante"
+echo "${nm}'s toy" 
+
+sample_string="The big fox"
+echo "${sample_string//fox/leaotard}"
+echo "I am ${nm:=Legion}"
+

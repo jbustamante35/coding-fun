@@ -1,0 +1,30 @@
+import java.math.BigDecimal;
+
+public class Product {
+	private String productName;
+	private String productID;
+	private BigDecimal productPrice;
+
+	public Product(String name, String id, String price) {
+		this.productName = name;
+		this.productID = id;
+		this.productPrice = new BigDecimal(price);
+	}
+	
+	public String getName(){
+		return this.productName;
+	}
+	
+	public String getID(){
+		return this.productID;
+	}
+	
+	public BigDecimal getPrice(){
+		return this.productPrice;
+	}
+
+	public String displayString() {
+		return "Product " + this.getID() + ": " + this.getName()
+				+ " costs " + this.getPrice();
+	}
+}

@@ -1,0 +1,16 @@
+public class AccountManager {
+	public Account createAccount(String name, double startFunds) {
+		Account account = new Account();
+		account.setName(name);
+		account.setAmount(startFunds);
+		return account;
+	}
+	
+	public boolean isOverdrawn(Account account) {
+		return account.getAmount() < 0;
+	}
+	
+	public void addFunds(Account account, double amount) {
+		account.setAmount(account.getAmount() + amount);
+	}
+} 

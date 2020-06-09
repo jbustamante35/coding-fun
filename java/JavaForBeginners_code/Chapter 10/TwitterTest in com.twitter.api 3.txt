@@ -1,0 +1,44 @@
+package com.twitter.api;
+
+import java.util.HashMap;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+public class TwitterTest {
+
+	private static final String CONSUMER_KEY = "FILL IN YOUR API KEY";
+	private static final String CONSUMER_SECRET = "FILL IN YOUR SECRET KEY";
+
+	private static final String REQUEST_TOKEN_URL =
+		"https://api.twitter.com/oauth/request_token";
+	private static final String AUTHORIZE_URL =
+		"https://api.twitter.com/oauth/authenticate";
+	private static final String ACCESS_TOKEN_URL =
+		"https://api.twitter.com/oauth/access_token";
+
+	public static void main(String[] args) throws Exception {
+		OAuthPostSignatureParametersProvider parametersProvider =
+			new OAuthPostSignatureParametersProvider("twitter",
+				CONSUMER_KEY, CONSUMER_SECRET,
+				REQUEST_TOKEN_URL, AUTHORIZE_URL, ACCESS_TOKEN_URL,
+				true);
+		TwitterRESTClient client = new TwitterRESTClient(parametersProvider);
+
+		String jsonResponse;
+
+		System.out.println("----- Get user time line: 5 tweets -----");
+		HashMap<String, String> data = new HashMap<>();
+		Data.put("count", "5");
+		jsonResponse = client.makeRequest("statuses/home_timeline.json",
+			data);
+
+		JsonParser jsonParser = new JsonParser();
+		JsonElement jsonElement = jsonParser.parse(jsonResponse);
+		JsonArray jsonArray = jsonElement.getAsJsonArray();
+
+		for (JsonElement element : jsonArray)
+			System.out.println(element.getAsJsonObject().get("text"));
+	}
+}

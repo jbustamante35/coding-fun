@@ -1,0 +1,29 @@
+class Dog {
+    boolean isSitting;
+	
+	void bark() { //Instance method
+		System.out.println("Woof!");
+	}
+    
+    String getBarkSound() {
+        return "Woof!";
+    }
+    
+    boolean isSitting() {
+        return isSitting;
+    }
+    
+    void sit() {
+        isSitting = true;
+    }
+    
+    void stand() {
+        isSitting = false;
+    }
+	
+	public static void main (String[] args){
+		Dog myDog = new Dog();
+		// Call the instance method on the object myDog:
+		myDog.bark();
+	}
+}

@@ -1,0 +1,17 @@
+public class MatrixExample {
+
+	// declare and initialize the matrix
+	static int[][] weirdMatrix={{1, 2},{2, 6, 8},{10}};
+
+	// This is our main method.
+	public static void main(String[] args){
+
+		// print some of the matrix numbers to the screen
+		System.out.println("Element at row 0 and column 1 is: " +
+			weirdMatrix[0][1] + ".");
+		System.out.println("Element at row 2 and column 2 is: " +
+			weirdMatrix[2][0] + ".");
+		System.out.println("Element at row 2 and column 1 is: " +
+			weirdMatrix[1][2] + ".");
+	}
+}

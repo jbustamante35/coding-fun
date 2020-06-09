@@ -1,0 +1,25 @@
+public class ExpenseProductCountCalculator extends ExpenseListCalculator {
+
+	private double count;
+	private String product;
+	
+	public ExpenseProductCountCalculator(String productToFind) {
+		this.product = productToFind;
+	}
+	
+	@Override
+	protected void initialize() {
+		count = 0;
+	}
+
+	@Override
+	protected void handle(Expense expense) {
+		if (expense.getProduct().equals(product))
+			count++;
+	}
+
+	@Override
+	protected double getResult() {
+		return count;
+	}
+}

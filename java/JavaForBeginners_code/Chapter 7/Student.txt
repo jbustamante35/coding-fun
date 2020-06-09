@@ -1,0 +1,38 @@
+public class Student extends Person{
+	private double[] grades;
+	private String program;
+	private boolean enrolled;
+	
+	public Student(String name) {
+		super(name);
+	}
+	
+	public double[] getGrades(){
+		return this.grades;
+	}
+	
+	public void setGrades(double... grades){
+		this.grades = grades;
+	}
+	
+	public double calculateGPA() {
+		double sum = 0;
+		double count = 0;
+		for (double grade : this.grades){
+			sum += grade;
+			count++;
+		}
+		return sum/count;
+	}
+	public String getProgram() {
+		return program;
+	}
+
+	public boolean isEnrolled() {
+		return enrolled;
+	}
+	public void enrollInProgram(String program) {
+		this.enrolled = true;
+		this.program = program;
+	}
+}

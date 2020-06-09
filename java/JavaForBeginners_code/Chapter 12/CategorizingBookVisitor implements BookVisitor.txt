@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class CategorizingBookVisitor implements BookVisitor {
+
+	private List<AudioBook> audioBooks;
+	private List<FictionBook> fictionBooks;
+	private List<NonFictionBook> nonFictionBooks;
+	
+	public CategorizingBookVisitor() {
+		this.audioBooks = new ArrayList<>();
+		this.fictionBooks = new ArrayList<>();
+		this.nonFictionBooks = new ArrayList<>();
+	}
+	
+	@Override
+	public void visit(AudioBook book) {
+		audioBooks.add(book);
+	}
+
+	@Override
+	public void visit(FictionBook book) {
+		fictionBooks.add(book);
+	}
+
+	@Override
+	public void visit(NonFictionBook book) {
+		nonFictionBooks.add(book);
+	}
+
+	public List<AudioBook> getAudioBooks() {
+		return audioBooks;
+	}
+
+	public List<FictionBook> getFictionBooks() {
+		return fictionBooks;
+	}
+
+	public List<NonFictionBook> getNonFictionBooks() {
+		return nonFictionBooks;
+	}
+}

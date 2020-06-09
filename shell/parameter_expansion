@@ -1,0 +1,37 @@
+#!/bin/bash
+
+rStr="A Random string"
+
+echo "String Length: ${#rStr}"
+echo "${rStr:2}"
+echo "${rStr:2:7}"
+echo "${rStr#*A }"
+
+n1=1
+while [ $n1 -le 10 ]; do
+	echo $n1
+	n1=$((n1 + 1))
+done
+
+n2=1
+while [ $n2 -le 20 ]; do
+	if (( ((n2 % 2)) == 0)); then
+		n2=$((n2 + 1))
+		continue
+	fi
+
+	if ((n2 >= 15)); then
+		break
+	fi
+
+	echo $n2
+	n2=$((n2 + 1))
+done
+
+n3=1
+
+until [ $n3 -gt 10 ]; do
+	echo $n3
+	n3=$((n3 + 1))
+done
+

@@ -1,0 +1,43 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Employee {
+	private int EmployeeID;
+	private String Name;
+	private String Gender;
+	private int DNR;
+
+	@Id
+	public int getEmployeeID() {
+		return EmployeeID;
+	}
+
+	public void setEmployeeID( int id ) {
+		this.EmployeeID = id;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName( String name ) {
+		this.Name = name;
+	}
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender( String gender ) {
+		this.Gender = gender;
+	}
+
+	public int getDNR() {
+		return DNR;
+	}
+
+	public void setDNR( int dnr) {
+		this.DNR = dnr;
+	}
+}

@@ -1,0 +1,17 @@
+public class VisitorTest {
+	public static void main(String[] args) {
+		Book[] books = new Book[]{
+				new AudioBook(), new FictionBook(), new FictionBook(),
+				new NonFictionBook(), new AudioBook(), new NonFictionBook()
+		};
+		
+		CategorizingBookVisitor visitor = new CategorizingBookVisitor();
+		for (Book book : books)
+			book.accept(visitor); // Accept the visitor
+		
+		System.out.println("Nr. audio books: "+visitor.getAudioBooks().size());
+		System.out.println("Nr. fiction books: "+visitor.getFictionBooks().size());
+		System.out.println("Nr. non-fiction books:
+			"+visitor.getNonFictionBooks().size());
+	}
+}

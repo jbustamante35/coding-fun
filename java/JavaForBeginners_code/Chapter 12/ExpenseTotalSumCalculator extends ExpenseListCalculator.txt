@@ -1,0 +1,19 @@
+public class ExpenseTotalSumCalculator extends ExpenseListCalculator {
+
+	private double total;
+	
+	@Override
+	protected void initialize() {
+		total = 0;
+	}
+
+	@Override
+	protected void handle(Expense expense) {
+		total += expense.getTotalPrice();
+	}
+
+	@Override
+	protected double getResult() {
+		return total;
+	}
+}

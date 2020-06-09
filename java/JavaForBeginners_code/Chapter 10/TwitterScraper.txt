@@ -1,0 +1,117 @@
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+public class TwitterScraper {
+	private static final Map<String, String> COOKIES =
+		new HashMap<String, String>();
+	private static final String USERNAME = "FILL IN YOUR USERNAME";
+	private static final String PASSWORD = "FILL IN YOUR PASSWORD";
+ 
+	public static void main(String[] args) throws IOException  {
+		System.out.println("Trying to log into Twitter...");
+		boolean result = login(USERNAME, PASSWORD);
+
+		System.out.println("Cookies are now:");
+		System.out.println(COOKIES);
+
+		if (!result) {
+			System.out.println("Login failed! Try the following:");
+			System.out.println("- Has the Twitter website changed?");
+			System.out.println("- Are your username and password correct?");
+			System.exit(0);
+		}
+
+		String username = getUsername();
+		System.out.println("Your username is: "+username);
+
+		String[] myStats = getStats(username);
+		System.out.println("Your stats: ");
+		System.out.println("- Tweets: "+myStats[0]);
+		System.out.println("- Following: "+myStats[1]);
+		System.out.println("- Followers: "+myStats[2]);
+
+		String[] wileyStats = getStats("WileyTech");
+		System.out.println("@WileyTech stats: ");
+		System.out.println("- Tweets: "+wileyStats[0]);
+		System.out.println("- Following: "+wileyStats[1]);
+		System.out.println("- Followers: "+wileyStats[2]);
+	}
+
+	public static String[] getStats(String username) throws IOException {
+	  Connection connection = Jsoup.connect("https://twitter.com/"+username);
+	  // We do not need to be logged in to get stats
+	  Document result = connection.get();
+	  String[] stats = new String[3]; // tweets, following, followers
+	  try {
+		  Element statsTable = result.select("table.js-mini-profile-stats").get(0);
+		  stats[0] = statsTable.select(
+			  "a[data-element-term=tweet_stats]").text();
+		  stats[1] = statsTable.select(
+			  "a[data-element-term=following_stats]").text();
+		  stats[2] = statsTable.select(
+			  "a[data-element-term=follower_stats]").text();
+	  } catch (IndexOutOfBoundsException e) {
+			// table.js-mini-profile-stats could not be found
+			// Perhaps this user has enabled the new Twitter profile?
+			Element statsTable = result.select("ul.ProfileNav-list").get(0);
+			stats[0] = statsTable.select(
+				"a[data-nav=tweets] span.ProfileNav-value").text();
+			stats[1] = statsTable.select(
+				"a[data-nav=following] span.ProfileNav-value").text();
+			stats[2] = statsTable.select(
+				"a[data-nav=followers] span.ProfileNav-value").text();
+		}
+		return stats;
+	}
+
+	public static String getUsername() throws IOException {
+		Connection connection = Jsoup.connect("https://twitter.com")
+				.cookies(COOKIES);
+		Document result = connection.get();
+		COOKIES.putAll(connection.response().cookies());
+		return result.select("div[role=navigation] li.profile a.js-
+			nav").attr("href").replace("/", "");
+	}
+
+	public static boolean login(String username, String password)
+		throws IOException {
+		COOKIES.clear(); // Clear all cookies
+		// Request Twitter homepage to set first cookies and get token
+		String authenticityToken = getAuthenticityToken();
+		// Then login using a POST request
+		Connection connection = Jsoup.connect("https://twitter.com/sessions")
+				.data("session[username_or_email]", username)
+				.data("session[password]", password)
+				.data("remember_me", "1")
+				.data("return_to_ssl", "true")
+				.data("redirect_after_login", "/")
+				.data("remember_me", "1")
+				.data("authenticity_token", authenticityToken)
+				.cookies(COOKIES);
+		Document result = connection.post();
+		COOKIES.putAll(connection.response().cookies());
+		if (result.html().contains("action=\"https://twitter.com/sessions\"")) {
+			// The sign-in form is still present in the result
+			// The login was probably incorrect
+			return false;
+		}
+		return true;	 
+	}
+
+	private static String getAuthenticityToken() throws IOException {
+		// Request Twitter homepage and get token
+		Connection initialConnection = Jsoup.connect("https://twitter.com/");
+		Document initialResult = initialConnection.get();
+		String authenticityToken = initialResult
+				.select("input[name=authenticity_token]").get(0).val();
+		// Update cookies
+		COOKIES.putAll(initialConnection.response().cookies());
+		return authenticityToken;
+	}
+}

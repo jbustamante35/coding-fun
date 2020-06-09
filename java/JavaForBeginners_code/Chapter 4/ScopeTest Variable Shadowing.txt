@@ -1,0 +1,21 @@
+class ScopeTest {
+	int a = 5;
+	static int b = 10;
+
+	void printA() {
+		int a = 10;
+		System.out.println("The value of a is now: "+a);
+	}
+	
+	void printInstanceA() {
+		int a = 10;
+		System.out.println("The value of INSTANCE VARIABLE " +
+			"a is now: "+this.a);
+	}
+	
+	void printClassB() {
+		int b = 10;
+		System.out.println("The value of INSTANCE VARIABLE " +
+			“b is now: "+ScopeTest.b);
+	}
+}

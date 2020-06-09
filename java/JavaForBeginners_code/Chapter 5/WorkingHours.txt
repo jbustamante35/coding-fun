@@ -1,0 +1,23 @@
+public class WorkingHours {
+	public static void main(String[] args) {
+		int[][] hoursWorked = { { 3, 2, 8, 2, 3 }, { 4, 4, 4, 4, 4, 4 },
+				{ 5, 5, 0, 5, 5 } };
+		String[] employees = { "Chris", "Danielle", "Michael" };
+		double wage = 8.30;
+
+		for (int x = 0; x < hoursWorked.length; x++) { // outer for loop
+			System.out.print(employees[x] + " worked ");
+			int weeklyHours = 0;
+
+			for (int y = 0; y < hoursWorked[0].length; y++) { // inner for loop
+				weeklyHours += hoursWorked[x][y];
+			} // close inner for loop
+
+			System.out
+					.println(weeklyHours + " hours at " + wage + " per hour.");
+			double weeklyPay = weeklyHours * wage;
+			System.out.println("Weekly Pay: " + weeklyPay);
+		} // close outer for loop
+
+	}
+}

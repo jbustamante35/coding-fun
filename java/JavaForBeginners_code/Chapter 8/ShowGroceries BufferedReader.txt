@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+ 
+public class ShowGroceries {
+	public static void main(String[] args) {
+		try (
+			BufferedReader in = new BufferedReader(new FileReader(
+				"grocerieswithprices.txt"));
+		) {
+			String line;
+			while ((line = in.readLine()) != null) {
+				String[] splittedLine = line.split(", ");
+				String item = splittedLine[0].trim();
+				double price = Double.parseDouble(splittedLine[1].trim());
+				System.out.format("Price of %s is: %.2f%n", item, price);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Comment
+
+echo "hellow wholerd"
+
+nm="Julian Albert Pagpaguitan Bustamante"
+echo "$nm"
+
+declare -r NUM1=3
+num1=4
+num2=$((PI+num1))
+num3=$((num1*num2))
+num4=$((num3/num2))
+
+echo "PI = $NUM1"
+echo "num1 = $num1"
+echo "num2 = $num2"
+echo "num3 = $num3"
+echo "num4 = $num4"
+
+rand=5
+let rand+=4
+echo "rand + 4 = $rand"
+echo "rand++ = $(( rand++ ))"
+echo "rand-- = $(( rand-- ))"
+
+num7=1.2
+num8=3.4
+num9=$(python -c "print($num7+$num8)")
+echo "num9 = $num9"
+
+cat<< END
+This text 
+prints on
+many lines
+END

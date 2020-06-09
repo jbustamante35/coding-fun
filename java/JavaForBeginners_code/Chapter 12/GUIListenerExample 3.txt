@@ -1,0 +1,29 @@
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class GUIListenerExample extends JFrame implements MouseListener {
+	public GUIListenerExample() {
+		this.addMouseListener(this);
+	}
+	
+	public void mouseClicked(MouseEvent e) {
+		JOptionPane.showMessageDialog(null, "You clicked the mouse!");
+	}
+	public void mouseEntered(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {}
+	public void mousePressed(MouseEvent e) {}
+	public void mouseReleased(MouseEvent e) {}
+	
+	public static void main(String[] args) {
+		// Create our subject
+		JFrame frame = new GUIListenerExample();
+		frame.setSize(400, 400);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		// Go
+		frame.setVisible(true);
+	}
+}

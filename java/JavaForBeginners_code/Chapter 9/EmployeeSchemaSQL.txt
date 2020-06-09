@@ -1,0 +1,18 @@
+CREATE TABLE 'EmployeeSchema'.'Employee' (
+	'EmployeeID' INT NOT NULL,
+	'Name' VARCHAR(45) NULL,
+	'Gender' VARCHAR(45) NULL,
+	'DNR' INT NULL,
+	PRIMARY KEY ('EmployeeID'),
+	INDEX 'DNRForeign_idx' ('DNR' ASC),
+	CONSTRAINT 'DNRForeign'
+	FOREIGN KEY ('DNR')
+	REFERENCES 'EmployeeSchema'.'Department' ('DNR')
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION)
+
+CREATE TABLE 'EmployeeSchema'.'Department' (
+	'DNR' INT NOT NULL
+	'DName' VARCHAR(45) NULL,
+	`DAddress` VARCHAR(45) NULL,
+	PRIMARY KEY ('DNR'))

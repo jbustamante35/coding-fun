@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class VisitorTest {
+	public static void main(String[] args) {
+		Book[] books = new Book[]{
+				new AudioBook(), new FictionBook(), new FictionBook(),
+				new NonFictionBook(), new AudioBook(), new NonFictionBook()
+		};
+		
+		List<AudioBook> audioBooks = new ArrayList<>();
+		List<FictionBook> fictionBooks = new ArrayList<>();
+		List<NonFictionBook> nonFictionBooks = new ArrayList<>();
+		
+		for (Book book : books) {
+			if (book instanceof AudioBook)
+				audioBooks.add((AudioBook) book);
+			else if(book instanceof FictionBook)
+				fictionBooks.add((FictionBook) book);
+			else if(book instanceof NonFictionBook)
+				nonFictionBooks.add((NonFictionBook) book);
+		}
+		
+		System.out.println("Nr. audio books: "+audioBooks.size());
+		System.out.println("Nr. fiction books: "+fictionBooks.size());
+		System.out.println("Nr. non-fiction books: "+nonFictionBooks.size());
+	}
+}
