@@ -1,0 +1,42 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Product {
+	private double price;
+	private String name;
+	private ProductType type;
+	private Map<String, Object> typeProperties;
+
+	public Product(String name, double price, ProductType type) {
+		this.name = name;
+		this.price = price;
+		this.type = type;
+		this.typeProperties = new HashMap<>();
+		for (String property : type.getProperties())
+			this.typeProperties.put(property, null);
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setProperty(String property, Object value) {
+		validateProperty(property);
+		typeProperties.put(property, value);
+	}
+	
+	public Object getProperty(String property) {
+		validateProperty(property);
+		return typeProperties.get(property);
+	}
+	
+	private void validateProperty(String property) {
+		if (!typeProperties.containsKey(property))
+			throw new IllegalArgumentException("Property "+property
+					+" not valid for type: "+type.getName());
+	}
+}

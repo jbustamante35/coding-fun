@@ -1,0 +1,10 @@
+public class EnhancedForLoop {
+
+	public static void main(String[] args){
+		for (int i : tenIntegers){
+			int doubled = i * 2;
+			System.out.println(i + " times two equals " + doubled);
+		}
+		System.out.println("End of program");
+	}
+}

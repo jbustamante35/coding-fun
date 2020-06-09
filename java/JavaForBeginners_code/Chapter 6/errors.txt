@@ -1,0 +1,20 @@
+public class errors {
+
+	public static vod main(String[] args) {
+		age = 30;
+		int retirementFund = 10000;
+		int yearsInRetirement = 0;
+		String name = "David Johnson",
+		for (int i = age; <= 65; ++){
+			recalculate(retirementFund,0.1);
+		}
+		int monthlyPension = retirementFund/yearsInRetirement/12
+		System.out.printline(name + " will have $" + monthlyPension
+				+ " per month for retirement."];
+	}
+
+	public static recalculate(fundAmount, rate){
+		fundAmount = fundAmount*(1+rate);
+	}
+  }
+}

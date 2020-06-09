@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS 'EmployeeSchema'.'Employee' (
+	'EmployeeID' INT NOT NULL,
+	'Name' VARCHAR(45) NULL,
+	'Gender' VARCHAR(45) NULL,
+	'DNR' INT NULL,
+	PRIMARY KEY ('EmployeeID'),
+	INDEX 'DNRForeign_idx' ('DNR' ASC),
+	CONSTRAINT 'DNRForeign'
+	  FOREIGN KEY ('DNR')
+	REFERENCES 'EmployeeSchema'.'Department' ('DNR')
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION)
+ENGINE = InnoDB
+
+CREATE TABLE IF NOT EXISTS 'EmployeeSchema'.'Department' (
+	'DNR' INT NOT NULL,
+	'DName' VARCHAR(45) NULL,
+	'DAddress' VARCHAR(45) NULL,
+	PRIMARY KEY ('DNR'))
+ENGINE = InnoDB
+
+insert into employeeschema.department
+values
+	(1,	'ICT',	'Brussels'),
+	(2,	'Marketing',	'New York'),
+	(3,	'Finance',	'Singapore'),
+	(4,	'Accounting',	'Sydney');
+
+insert into employeeschema.employee
+values
+	(1,	'Bart Baesens',	'Male',	1),
+	(2,	'Aimée Backiel',	'Female',	1),
+	(3,	'Seppe vanden Broucke',	'Male',	1),
+	(4,	'Michael Jackson',	'Male',	2),
+	(5,	'Sarah Adams',	'Female',	3);

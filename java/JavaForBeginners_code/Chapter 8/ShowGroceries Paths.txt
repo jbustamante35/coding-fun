@@ -1,0 +1,22 @@
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class ShowGroceries {
+	public static void main(String[] args) {
+		List<String> groceries = new ArrayList<>();
+		try {
+			groceries = Files.readAllLines(
+				  Paths.get("groceries.txt"),
+							Charset.defaultCharset());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		for (String item : groceries) {
+			System.out.println("Don’t forget to pickup: " + item);
+		}
+	}
+}

@@ -1,0 +1,6 @@
+public class Master extends Graduate {
+
+	public Master(String name) {
+		super(name);
+	}
+}

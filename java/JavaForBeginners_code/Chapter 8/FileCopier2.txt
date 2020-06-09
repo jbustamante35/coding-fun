@@ -1,0 +1,20 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileCopier {
+	public static void main(String[] args) {
+		try (
+			FileInputStream in = new FileInputStream("groceries.txt");
+			FileOutputStream out = new FileOutputStream("groceries (copy).txt");
+		) {
+			int c;
+			while ((c = in.read()) != -1) {
+				out.write(c);
+				System.out.print((char) c);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

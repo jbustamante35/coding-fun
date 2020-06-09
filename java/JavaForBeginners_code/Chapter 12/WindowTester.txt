@@ -1,0 +1,6 @@
+public class WindowTester {
+	public static void main(String[] args) {
+		Window decoratedWindow1 = new NaggingWindowDecorator(new NormalWindow());
+		Window decoratedWindow2 = new ScrollingWindowDecorator(new NaggingWindowDecorator(new NormalWindow()));
+	}
+}

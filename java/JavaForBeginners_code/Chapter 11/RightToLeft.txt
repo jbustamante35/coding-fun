@@ -1,0 +1,15 @@
+import java.awt.ComponentOrientation;
+import javax.swing.JFrame;
+
+public class RightToLeft {
+	public static void main(String[] args) {
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		JFrame frame = new JFrame("Right to Left Frame");
+		
+		frame.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		
+		frame.setSize(300, 300);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}

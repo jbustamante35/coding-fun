@@ -1,0 +1,80 @@
+import java.math.BigDecimal;
+
+public class SavingsAccount implements Accountable {
+	private String name;
+	private BigDecimal amount;
+
+	public SavingsAccount(String name, String amount) throws IllegalAccountOpening {
+		if (isValidDeposit(amount)) {
+			this.setName(name);
+			this.setAmount(new BigDecimal(amount));
+		} else {
+			throw new IllegalAccountOpening();
+		}
+	}
+
+	@Override
+	public boolean isValidDeposit(String deposit) {
+		BigDecimal temp;
+		try {
+			temp = new BigDecimal(deposit);
+		} catch (Exception e) {
+			return false;
+		}
+		return temp.compareTo(BigDecimal.ZERO) > 0;
+
+	@Override
+	public void deposit(String deposit) throws IllegalDeposit {
+		if (isValidDeposit(deposit)) {
+			this.setAmount(this.getAmount().add(new BigDecimal(deposit)));
+		} else {
+			throw new IllegalDeposit();
+		}
+	}
+
+	@Override
+	public boolean isValidWithdrawal(String withdrawal) {
+		BigDecimal temp;
+		try {
+			temp = new BigDecimal(withdrawal);
+		} catch (Exception e) {
+			return false;
+		}
+		if (temp.compareTo(this.getAmount()) < 0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public void withdraw(String withdrawal) throws IllegalWithdrawal {
+		if (isValidWithdrawal(withdrawal)) {
+			this.setAmount(this.getAmount()
+					.subtract(new BigDecimal(withdrawal)));
+		} else {
+			throw new IllegalWithdrawal();
+		}
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		this.name = name;
+	}
+
+	public BigDecimal getAmount() {
+		return amount;
+	}
+
+	private void setAmount(BigDecimal amount) {
+		this.amount = amount;
+	}
+	
+	@Override
+	public String toString() {
+		return "SavingsAccount " + this.getName()
+				+ ": Balance = " + this.getAmount();
+	}
+}

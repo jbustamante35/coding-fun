@@ -1,0 +1,15 @@
+import java.util.List;
+
+public abstract class ExpenseListCalculator {
+	public final double calculate(List<Expense> expenses) {
+		initialize();
+		for (Expense expense : expenses) {
+			handle(expense);
+		}
+		return getResult();
+	}
+
+	protected abstract void initialize();
+	protected abstract void handle(Expense expense);
+	protected abstract double getResult();
+}

@@ -1,0 +1,77 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JProgressBar;
+import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
+
+public class ProgressTrackingFrame extends JFrame implements ActionListener {
+	private final JProgressBar bar = new JProgressBar(0, 100);
+	private final JButton btn = new JButton("Start Calculation");
+	private SwingWorker<Boolean, Integer> backgroundTask = null;
+	
+	public ProgressTrackingFrame() {
+		super();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Progress Tracker");
+		setLayout(new FlowLayout());
+		btn.addActionListener(this);
+		add(bar);
+		add(btn);
+		pack();
+		setVisible(true);
+	}
+	
+	public SwingWorker<Boolean, Integer> makeBackgroundTask(final long total) {
+		SwingWorker<Boolean, Integer> task = new SwingWorker<Boolean, Integer>(){
+			@Override
+			protected Boolean doInBackground() throws Exception {
+				btn.setText("Stop Calculation");
+				for (long i = 0; i < total; i++) {
+					if (isCancelled()) {
+						bar.setValue(0);
+						return false;
+					}
+					int perc = (int) 
+							(i * (bar.getMaximum() - bar.getMinimum())
+									/ total);
+					publish(perc);
+				}
+				return true;
+			}
+			@Override
+			protected void process(List<Integer> percs) {
+				for (int perc : percs)
+					if (bar.getValue() < perc)
+						bar.setValue(perc);
+			}
+			@Override
+			public void done() {
+				btn.setText("Start Calculation");
+				backgroundTask = null;
+			}
+		};
+		return task;
+	}
+
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		if (backgroundTask == null) {
+			backgroundTask = makeBackgroundTask(1000000000);
+			backgroundTask.execute();
+		} else {
+			backgroundTask.cancel(true);
+		}
+	}
+	
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() { new ProgressTrackingFrame(); }
+		});
+	}
+}

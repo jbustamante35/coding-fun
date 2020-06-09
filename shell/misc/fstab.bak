@@ -1,0 +1,23 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/nvme0n1p5 during installation
+UUID=c37a1ba2-1a09-461e-b60f-200555eb3224 /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/nvme0n1p1 during installation
+UUID=D20F-2B38  /boot/efi       vfat    umask=0077      0       1
+# swap was on /dev/nvme0n1p6 during installation
+UUID=79a7f2ff-ce75-4ebe-a2f4-96aa56b35ae5 none            swap    sw              0       0
+# Edgar Lab mounted drives
+#//128.104.98.40/spaldingfiles1 /mnt/spaldingfiles1 cifs auto,passwd=,dir_mode=0777,file_mode=0777 0 0
+#//128.104.98.40/spaldingfiles2 /mnt/spaldingfiles2 cifs auto,passwd=,dir_mode=0777,file_mode=0777 0 0
+#//128.104.98.39/spaldingdata /mnt/spaldingdata cifs auto,password=,dir_mode=0777,file_mode=0777 0 0
+#//128.104.98.39/tetra /mnt/tetra cifs auto,password=,dir_mode=0777,file_mode=0777 0 0
+#//128.104.98.39/sspiranhapuffer1 /mnt/piranhapuffer1 cifs auto,password=,dir_mode=0777,file_mode=0777 0 0
+#//128.104.98.39/sspiranhapuffer2 /mnt/piranhapuffer2 cifs auto,password=,dir_mode=0777,file_mode=0777 0 0 
+#//128.104.98.118/doane		/mnt/doane	cifs auto,password=,dir_mode=0777,file_mode=0777 0 0
+#//128.104.98.118/snapper	/mnt/snapper	cifs	auto,password=,dir_mode=0777,file_mode=0777 0 0
+#//128.104.98.118/spaldingimages /mnt/spaldingimages cifs auto,password=,dir_mode=0777,file_mode=0777 0 0

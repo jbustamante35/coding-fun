@@ -1,0 +1,9 @@
+class JobType{
+	String JobName;
+	int salaryBand;
+	
+	JobType (String name, int band){
+		JobName = name;
+		salaryBand = band;
+	}
+}

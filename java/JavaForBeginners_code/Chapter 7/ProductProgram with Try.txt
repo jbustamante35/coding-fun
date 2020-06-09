@@ -1,0 +1,12 @@
+public class ProductProgram {
+	public static void main(String[] args) {
+		Product myWidget = new Product("Widget","WID0001","11.50");
+		
+		try {
+			myWidget.setPrice("-5.0");
+		} catch (IllegalArgumentException e){
+			System.out.println(e + " is an invalid price.");
+		}
+		System.out.println(myWidget.displayString());
+	}
+}

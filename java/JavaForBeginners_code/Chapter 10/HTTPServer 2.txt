@@ -1,0 +1,59 @@
+import java.awt.Desktop;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.simpleframework.http.Request;
+import org.simpleframework.http.Response;
+import org.simpleframework.http.core.Container;
+import org.simpleframework.http.core.ContainerSocketProcessor;
+import org.simpleframework.transport.connect.Connection;
+import org.simpleframework.transport.connect.SocketConnection;
+
+
+public class HTTPServer implements Container {
+	private static final int PORT = 880;
+	private static final String ROOTDIR = "data";
+
+	public void handle(Request request, Response response) {
+		try {
+			System.err.println(request.getPath());
+			Path path = Paths.get(ROOTDIR + request.getPath());
+			if (Files.exists(path) && Files.isRegularFile(path)) {
+				OutputStream body = response.getOutputStream();
+				byte[] data = Files.readAllBytes(path);
+				body.write(data);
+				body.close();
+			} else {
+				PrintStream body = response.getPrintStream();
+				body.println("404 Not Found");
+				body.close();
+				response.setStatus(org.simpleframework.http.Status.NOT_FOUND);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] list) throws Exception {
+		Container container = new HTTPServer();
+		ContainerSocketProcessor server = new ContainerSocketProcessor(container);
+		Connection connection = new SocketConnection(server);
+		SocketAddress address = new InetSocketAddress(PORT);
+		connection.connect(address);
+		
+		Desktop.getDesktop().browse(new URI("http://127.0.0.1:" + PORT));
+
+		System.out.println("Press ENTER to stop server...");
+		System.in.read();
+
+		connection.close();
+		server.stop();
+	}
+}

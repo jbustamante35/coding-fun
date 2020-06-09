@@ -1,0 +1,19 @@
+public class TypeCastingExample {
+
+	// This is our main method.
+	public static void main(String[] args){
+		int intA = 4;
+		float floatB = 6.82f;
+		//Widening conversion
+		double doubleX = (double) intA;
+
+		//Narrowing conversion
+		int intY = (int) floatB;
+
+		// print out the values
+		System.out.println("The value of intA is: " + intA +".");
+		System.out.println("The value of floatB is: " + floatB +".");
+		System.out.println("The value of doubleX is: " + doubleX +".");
+		System.out.println("The value of intY is: " + intY +".");
+	}
+}

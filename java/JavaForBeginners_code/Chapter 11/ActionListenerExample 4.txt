@@ -1,0 +1,42 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
+public class ActionListenerExample extends JFrame implements ActionListener {
+	public ActionListenerExample() {
+		super();
+		this.setLayout(new FlowLayout());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JButton btn1 = new JButton("Click Me!");
+		JButton btn2 = new JButton("No, click me!");
+		btn1.addActionListener(this);
+		btn2.addActionListener(this);
+		getContentPane().add(btn1);
+		getContentPane().add(btn2);
+		pack();
+		setVisible(true);
+	}
+
+	@Override
+	
+	public void actionPerformed(ActionEvent ev) {
+		 JOptionPane.showMessageDialog(
+			null,
+			"You clicked a button!",
+			"Aw yeah!",
+			JOptionPane.PLAIN_MESSAGE);
+	}
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				new ActionListenerExample();
+		}
+		});
+	}
+}

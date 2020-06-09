@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: *LENGTH*
+
+<?xml version="1.0"?>
+<soap:Envelope
+	  xmlns:soap="http://www.w3.org/2001/12/soap-envelope"
+	  soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+
+<soap:Body xmlns:m="http://www.example.org/mathematics">
+	  <m:AddTwoNumbersResult>
+			<m:Result>9</m:Result>
+	  </m:AddTwoNumbersResult>
+</soap:Body>
+
+</soap:Envelope>

@@ -1,0 +1,49 @@
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+
+
+public class ClassMaker {
+	public static void main(String[] args) throws Exception {
+		String source = "public class Test { "
+			+ "static { System.out.println(
+				\"A new class enters this life!\"); } "
+			"public Test() { "
+			+ "	System.out.println(
+				\"Wow! Who has created me?\");"
+			+ "}"
+			+ "}";
+
+	Path sourceDir = Files.createTempDirectory("_javaTest");
+	Path sourceFile = Paths.get(sourceDir + "/Test.java");
+	Files.write(sourceFile, source.getBytes());
+
+	System.out.println("Compiling: "+sourceFile.toString());
+
+	JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+	if (compiler == null) {
+		System.out.println(
+			"Could not get compiler. Are you running with JDK?");
+		System.exit(1);
+	}
+
+	compiler.run(null, null, null, sourceFile.toString());
+
+	System.out.println("Making class...");
+
+	URLClassLoader classLoader = URLClassLoader.newInstance(
+		new URL[] {
+			sourceDir.toUri().toURL()
+		});
+	Class<?> cls = Class.forName("Test", true, classLoader);
+	Object instance = cls.newInstance();
+
+	System.out.println("Compiled a new class: "+cls);
+	System.out.println("Created its instance: "+instance);
+	}
+}

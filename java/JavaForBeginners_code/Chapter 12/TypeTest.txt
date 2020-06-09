@@ -1,0 +1,29 @@
+import java.util.HashSet;
+
+public class TypeTest {
+	public static void main(String[] args) {
+		ProductType musicType = new ProductType("Music",
+				new HashSet<String>());
+		ProductType movieType = new ProductType("Movie",
+				new HashSet<String>());
+		
+		// Set some properties for books:
+		ProductType bookType = new ProductType("Book",
+				new HashSet<String>(){{
+					add("title");
+					add("author");
+					add("pages");
+				}});
+		
+		Product someMusic = new Product("A music track", 0.99, musicType);
+		
+		Product aBook = new Product("My book", 44.99, bookType);
+		aBook.setProperty("title", aBook.getName());
+		aBook.setProperty("author", "Aimee, Bart and Seppe");
+		aBook.setProperty("pages", 540);
+		
+		System.out.println("Book title: "+aBook.getProperty("title"));
+		System.out.println("Book author: "+aBook.getProperty("author"));
+		System.out.println("Book pages: "+aBook.getProperty("pagesjava define c"));
+	}
+}

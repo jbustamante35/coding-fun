@@ -1,0 +1,55 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class ProductType {
+	private String name;
+	
+	private Map<String, Object> staticProperties;
+	private Map<String, Object> instanceProperties;
+	
+	public ProductType(String name) {
+		this.name = name;
+		this.staticProperties = new HashMap<>();
+		this.instanceProperties = new HashMap<>();
+	}
+	
+	public Product createProduct(String name, double price) {
+		return new Product(name, price, this);
+	}
+	
+	public String getName() {
+		return name;
+	}
+		
+	public void addStaticProperty(String name, Object value) {
+		staticProperties.put(name, value);
+	}
+	
+	public void removeStaticProperty(String name, Object value) {
+		staticProperties.remove(name);
+	}
+	
+	public void addInstanceProperty(String name, Object value) {
+		instanceProperties.put(name, value);
+	}
+	
+	public void removeInstanceProperty(String name, Object value) {
+		instanceProperties.remove(name);
+	}
+	
+	public boolean isInstanceProperty(String name) {
+		return instanceProperties.containsKey(name);
+	}
+	
+	public boolean isStaticProperty(String name) {
+		return staticProperties.containsKey(name);
+	}
+	
+	public Object getStaticProperty(String name) {
+		return staticProperties.get(name);
+	}
+	
+	public Object getInstanceProperty(String name) {
+		return instanceProperties.get(name);
+	}
+}

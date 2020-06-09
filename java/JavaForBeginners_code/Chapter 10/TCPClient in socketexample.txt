@@ -1,0 +1,39 @@
+package socketexample;
+
+import java.io.*;
+import java.net.*;
+
+public class TCPClient {
+	public static void main(String args[]) {
+		try (   // Create a socket connecting to server
+				Socket clientSocket = new Socket("localhost", 9000);
+				// Set up input stream reader to read keyboard input
+				BufferedReader keyboardReader =
+			  new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
+				// Set up input stream reader (from server)
+				DataInputStream incoming = 
+			  new DataInputStream(clientSocket.getInputStream());
+				// Set up output stream writer (to server)
+				DataOutputStream outgoing = new DataOutputStream(clientSocket.getOutputStream());
+		) {
+			// Read message from user
+			System.out.println("Enter message to send to server: ");
+			String message = keyboardReader.readLine();
+			// Send message to server
+			outgoing.writeUTF(message + '\n');
+			// Read the reply from server
+			System.out.println("Server replied: ");
+			try {
+				String reply = incoming.readUTF();
+				System.out.print(reply);
+			} catch (EOFException eof) {
+				// Do nothing... server has closed the connection
+			}
+			// Close the connection
+			clientSocket.close();
+			System.out.println("Connection closed gracefully");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

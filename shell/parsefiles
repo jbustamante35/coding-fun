@@ -1,0 +1,16 @@
+#!/bin/bash
+
+while read first last avg rbis hrs; do
+	printf "${first} ${last}\nAvg: ${avg}\nRBIs: ${rbis}\nHRs: ${hrs}\n"
+
+done < barry_bonds.txt
+
+for (( i=0; i <= 10; i=i+1 )); do
+	echo $i
+done
+
+for i in {A..Z}; do
+	echo $i
+done
+
+

@@ -1,0 +1,18 @@
+POST /mathematicsService HTTP/1.1
+Host: www.example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: *LENGTH*
+
+<?xml version="1.0"?>
+<soap:Envelope
+	  xmlns:soap="http://www.w3.org/2001/12/soap-envelope"
+	  soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+
+<soap:Body xmlns:m="http://www.example.org/mathematics">
+	  <m:AddTwoNumbers>
+		  <m:FirstNumber>3</m:FirstNumber >
+		  <m:SecondNumber>6</m:SecondNumber>
+	  </m:AddTwoNumbers>
+</soap:Body>
+
+</soap:Envelope>

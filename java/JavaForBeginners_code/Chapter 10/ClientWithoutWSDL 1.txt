@@ -1,0 +1,38 @@
+import javax.xml.soap.SOAPConnection;
+import javax.xml.soap.SOAPConnectionFactory;
+import javax.xml.soap.SOAPMessage;
+
+public class ClientWithoutWSDL {
+
+	private final static String SERVICE_HOST = "http://www.webserviceX.NET/";
+	private final static String SERVICE_METHOD = "GetQuote";
+	private final static String SERVICE_ENDPOINT = "stockquote.asmx";
+ 
+	private final static String STOCK_SYMBOL = "IBM";
+
+	public static void main(String args[]) {
+	  try {
+		// Create a new SOAP connection
+		SOAPConnectionFactory soapConnectionFactory =
+		SOAPConnectionFactory.newInstance();
+		SOAPConnection soapConnection = soapConnectionFactory.createConnection();
+
+		   // Send a SOAP Message to SOAP server
+		   // Send this message to http://www.webserviceX.NET/stockquote.asmx
+		   SOAPMessage soapResponse = soapConnection.call(
+				createSOAPRequest(STOCK_SYMBOL),
+				SERVICE_HOST + SERVICE_ENDPOINT);
+
+		  // Close the connection
+		  soapConnection.close();
+	  } catch (Exception e) {
+		  System.err.println("Fatal error occurred");
+		  e.printStackTrace();
+	  }
+	}
+
+	private static SOAPMessage createSOAPRequest(String stockSymbol) {
+		// Construct a new SOAP request message
+		return null;
+	}
+}

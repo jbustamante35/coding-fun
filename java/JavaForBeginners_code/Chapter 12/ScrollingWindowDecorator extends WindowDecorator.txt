@@ -1,0 +1,12 @@
+import javax.swing.JScrollPane;
+public class ScrollingWindowDecorator extends WindowDecorator {
+	public ScrollingWindowDecorator(Window window) {
+		super(window);
+		// Add a simple message just to show the decorator is working:
+		getWindow().addPanel("Decorated with ScrollingWindowDecorator");
+		((JScrollPane) getWindow().getJFrame().getContentPane()).setHorizontalScrollBarPolicy(
+				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		((JScrollPane) getWindow().getJFrame().getContentPane()).setVerticalScrollBarPolicy(
+				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+	}
+}

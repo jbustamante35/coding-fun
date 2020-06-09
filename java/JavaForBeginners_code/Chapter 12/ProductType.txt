@@ -1,0 +1,19 @@
+import java.util.Set;
+
+public class ProductType {
+	private String name;
+	private Set<String> properties;
+	
+	public ProductType(String name, Set<String> properties) {
+		this.name = name;
+		this.properties = properties;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public Set<String> getProperties() {
+		return properties;
+	}
+}

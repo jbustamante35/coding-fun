@@ -1,0 +1,5 @@
+public interface BookVisitor {
+	public void visit(AudioBook book);
+	public void visit(FictionBook book);
+	public void visit(NonFictionBook book);
+}

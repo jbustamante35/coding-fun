@@ -1,0 +1,15 @@
+public class Faculty extends Employee {
+	private String department;
+
+	public Faculty(String name, Employee manager, int empID) {
+		super(name, manager, empID);
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+}

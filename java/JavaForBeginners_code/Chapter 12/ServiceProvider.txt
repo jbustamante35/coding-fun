@@ -1,0 +1,18 @@
+public class ServiceProvider {
+	private static final ServiceLocator INSTANCE = new ServiceLocator();
+	private ServiceLocator() {}
+
+	private Logger logger;
+ 
+	public static ServiceLocator getInstance() {
+		return INSTANCE;
+	}
+
+	private Logger getLogger() {
+		return logger;
+	} 
+
+	private void setLogger(Logger logger) {
+		this.logger = logger;
+	}  
+}

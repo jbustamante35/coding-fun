@@ -1,0 +1,30 @@
+public class UnifiedPrinter {
+	public void print(Document d, int nrCopies, boolean printDuplicate) {
+		if (isLaser()) {
+			for (int copy = 1; copy <= nrCopies; copy++)
+				printLaser(d, printDuplicate);
+		} else {
+			if (printDuplicate)
+				printInkjetDuplicate(d, nrCopies);
+			else
+				printInkjet(d, nrCopies);
+		}
+	}
+	
+	public void printInkjet(Document d, int nrCopies) {
+		// Print code here
+	}
+	
+	public void printInkjetDuplicate(Document d, int nrCopies) {
+		// Print code here
+	}
+
+	public void printLaser(Document d, boolean printDuplicate) {
+		// Print code here
+	}
+	
+	public boolean isLaser() {
+		// Figure out whether this is a laser printer or not
+		return true;
+	}
+}

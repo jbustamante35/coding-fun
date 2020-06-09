@@ -1,0 +1,123 @@
+package withoutwsdlobjectoriented;
+
+import java.util.Date;
+
+public class Stock {
+	private String symbol, name;
+	private double last, open, high, low;
+	private long volume;
+	private Date timestamp;
+	private double marketCap;
+	private double previousClose;
+	private double change, percentageChange;
+	private double annRangeLow, annRangeHigh;
+	private double earns;
+	private double pe;
+
+	public Stock(String symbol, String name, double last, double open, double high,
+			double low, long volume, Date timestamp, double marketCap,
+			double previousClose, double change, double percentageChange,
+			double annRangeLow, double annRangeHigh, double earns, double pe) {
+		this.symbol = symbol;
+		this.name = name;
+		this.last = last;
+		this.open = open;
+		this.high = high;
+		this.low = low;
+		this.volume = volume;
+		this.timestamp = timestamp;
+		this.marketCap = marketCap;
+		this.previousClose = previousClose;
+		this.change = change;
+		this.percentageChange = percentageChange;
+		this.annRangeLow = annRangeLow;
+		this.annRangeHigh = annRangeHigh;
+		this.earns = earns;
+		this.pe = pe;
+	}
+
+	public String getSymbol() {
+		return symbol;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getLast() {
+		return last;
+	}
+
+	public double getChange() {
+		return change;
+	}
+
+	public double getOpen() {
+		return open;
+	}
+
+	public double getHigh() {
+		return high;
+	}
+
+	public double getLow() {
+		return low;
+	}
+
+	public long getVolume() {
+		return volume;
+	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public double getMarketCap() {
+		return marketCap;
+	}
+
+	public double getPreviousClose() {
+		return previousClose;
+	}
+
+	public double getPercentageChange() {
+		return percentageChange;
+	}
+
+	public double getAnnRangeLow() {
+		return annRangeLow;
+	}
+
+	public double getAnnRangeHigh() {
+		return annRangeHigh;
+	}
+
+	public double getEarns() {
+		return earns;
+	}
+
+	public double getPe() {
+		return pe;
+	}
+
+	public String toString() {
+		String r = "";
+		r += "STOCK " + symbol + ": " + name + "\r\n";[AU: why always \r\n? -TE -habbit]
+		int l = r.length() - 2;
+		for (int i = 0; i < l; i++)
+			r += "=";
+		r += "\r\n";
+		r += "* Retrieved at: " + timestamp + "\r\n";
+		r += "* Last / High / Low / Open: " +
+				last + " / " + high + " / " + low + " / " + open + "\r\n";
+		r += "* Previous close: " + previousClose + "\r\n";
+		r += "* Volume: " + volume + "\r\n";
+		r += "* Market Cap: " + marketCap + "B" + "\r\n";
+		r += "* Change (%): " + change + " (" + percentageChange + "%)" + "\r\n";
+		r += "* Annual range High / Low: " +
+				annRangeHigh + " / " + annRangeLow + "\r\n";
+		r += "* Earns: " + earns + "\r\n";
+		r += "* P/E: " + pe + "\r\n";
+		return r;
+	}
+}

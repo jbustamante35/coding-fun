@@ -1,0 +1,45 @@
+public class Book {
+	String title;
+	String author;
+	boolean isRead;
+	int numberOfReadings;
+	
+	public Book(String bookTitle, String authorName){
+		 title = bookTitle;
+		 author = authorName;
+	}
+
+	public Book(String bookTitle){
+		title = bookTitle;
+		author = "Unknown";
+	}
+
+	//Commented out: duplicate method
+	//public Book(String authorName){
+	//	title = "Unknown";
+	//	author = authorName;
+	//}
+
+	public Book(String bookTitle, String authorName, boolean hasBeenRead){
+		title = bookTitle;
+		author = authorName;
+		isRead = hasBeenRead;
+	}
+
+	public Book(String bTitle, String aName, boolean hasBeenRead, int read){
+		title = bTitle;
+		author = aName;
+		isRead = hasBeenRead;
+		numberOfReadings = read;
+	}
+
+	public void read(){
+		isRead = true;
+		numberOfReadings++;
+}
+
+	public void read(int i){
+		isRead = true;
+		numberOfReadings += i;
+	}
+}

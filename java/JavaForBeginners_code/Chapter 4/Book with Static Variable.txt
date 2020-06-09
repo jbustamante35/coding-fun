@@ -1,0 +1,20 @@
+class Book {
+    static int maxAmountOfPages = 500;
+    
+	String title = "Unknown Title";
+    String[] authors = new String[]{"Anonymous"};
+    int yearReleased = 2014, copiesSold = 0, nrOfPages = 1400;
+	
+	public static void main (String[] args){
+		Book superLargeBook = new Book();
+		superLargeBook.title = "Super Large Boring Book";
+
+		System.out.println("I have a book here with the title: "+superLargeBook.title);
+		System.out.println("Written by: "+superLargeBook.authors);
+		System.out.println("Released in: "+superLargeBook.yearReleased);
+		System.out.println("With number of pages: "+superLargeBook.nrOfPages);
+
+		System.out.println("However, we only support books with max. pages: "
+				+superLargeBook.maxAmountOfPages);
+	}
+}

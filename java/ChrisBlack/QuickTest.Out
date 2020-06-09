@@ -1,0 +1,29 @@
+
+
+Test cases.....
+
+
+construct invalid name: Mr. NULL Y Wong
+PersonException! : Person.PersonException: Invalid Null string input
+============================
+construct invalid name: Prof. Jimmy Y Sander
+PersonException! : Person.PersonException: Invalid title Prof.
+============================
+construct valid name: Mr. Jimmy Y Sander
+Name : Mr. Jimmy Y. Sander
+============================
+Name #1 : Mr. Joe Q. Student
+Name #2 : Mr. Joe Q. Student
+Equals : true
+============================
+Name #1 : Mr. Joe Q. Student
+Name #2 - change initial : Y
+Name #2 : Mr. Joe Y. Student
+Equals : false
+============================
+Name #2 - Set title : Mrs.
+Name #2 : Mrs. Joe Y. Student
+============================
+Name #2 - Set title : Dr.
+PersonException! : Person.PersonException: Invalid title Dr.
+============================

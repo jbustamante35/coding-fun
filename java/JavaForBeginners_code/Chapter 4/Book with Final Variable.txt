@@ -1,0 +1,15 @@
+/**
+* Note: This class will not compile!
+*/
+class Book {
+	final String title = "Unknown Title";
+	String[] authors = new String[]{"Anonymous"};
+
+	int yearReleased = 2014, copiesSold = 0, nrOfPages;
+
+	public static void main(String[] args) {
+		Book superLargeBook = new Book();
+		superLargeBook.title = "Super Large Boring Book";
+		superLargeBook.nrOfPages = 1400;
+	}
+}

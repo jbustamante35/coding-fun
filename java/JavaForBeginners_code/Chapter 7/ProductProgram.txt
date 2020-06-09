@@ -1,0 +1,7 @@
+public class ProductProgram {
+	public static void main(String[] args) {
+		Product myWidget = new Product("Widget","WID0001","11.50");
+		myWidget.productPrice = new BigDecimal("-5.00");
+		System.out.println(myWidget.displayString());
+	}
+}

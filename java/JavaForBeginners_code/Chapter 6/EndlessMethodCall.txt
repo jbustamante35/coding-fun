@@ -1,0 +1,14 @@
+public class EndlessMethodCall {
+
+	public static void main(String[] args) {
+		printMe();
+	}
+
+	public static void displayMe(){
+		printMe();
+	}
+
+	public static void printMe(){
+		displayMe();
+	}
+}

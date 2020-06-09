@@ -1,0 +1,45 @@
+public class SalesCalculatorForLoopOptions {
+	public static void main(String[] args) {
+		int[] sales2014 = { 500, 720, 515, 377, 400, 435, 510, 1010, 894, 765,
+				992, 1125 };
+		int[] staff2014 = { 7, 5, 5, 5, 5, 6, 6, 7, 7, 8, 9, 9 };
+		int[] salesPerStaff = new int[12];
+		int totalSales2014 = 0;
+
+		for (int i = 0; i < sales2014.length; i++) {
+			salesPerStaff[i] = sales2014[i] / staff2014[i];
+			totalSales2014 = totalSales2014 + sales2014[i];
+		}
+		System.out.println("2014 Total Sales: $" + totalSales2014);
+
+		// for loop with blank initialization
+		totalSales2014 = 0; // reset totalSales2014
+		int j = 0; // specify initialization variable here, not before
+					// termination
+		for (; j < sales2014.length; j++) {
+			salesPerStaff[j] = sales2014[j] / staff2014[j];
+			totalSales2014 = totalSales2014 + sales2014[j];
+		}
+		System.out.println("2014 Total Sales: $" + totalSales2014);
+
+		// for loop with blank termination
+		totalSales2014 = 0; // reset totalSales2014
+		for (int k = 0; k < sales2014.length;) {
+			salesPerStaff[k] = sales2014[k] / staff2014[k];
+			totalSales2014 = totalSales2014 + sales2014[k];
+			k = k + 1; // specify increment here, not after termination
+		}
+		System.out.println("2014 Total Sales: $" + totalSales2014);
+
+		// for loop with the iterator's value changed inside the loop
+		totalSales2014 = 0; // reset totalSales2014
+		for (int i = 0; i < sales2014.length; i++) {
+			i = i * 2; // this line is added
+			salesPerStaff[i] = sales2014[i] / staff2014[i];
+			totalSales2014 = totalSales2014 + sales2014[i];
+		}
+		// You will get an error when i*2 is greater than 11,
+		// so this line will not print
+		System.out.println("2014 Total Sales: $" + totalSales2014);
+	}
+}

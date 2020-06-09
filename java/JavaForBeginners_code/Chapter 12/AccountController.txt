@@ -1,0 +1,28 @@
+import javax.swing.JFrame;
+
+public class AccountController {
+	private Account model;
+	private AccountWindow view;
+	
+	public AccountController(Account model, AccountWindow view) {
+		this.model = model;
+		this.view = view;
+	}
+	
+	public void addFunds(double amount) {
+		model.addFunds(amount);
+		view.updateView(model.getAmount());
+	}
+	
+	public static void main(String args[]) {
+		Account myAccount = new Account("AimeeBartSeppe Ltd.", 3000);
+		AccountWindow myView = new AccountWindow();
+		
+		AccountController controller = new AccountController(myAccount, myView);
+		myView.setController(controller);
+		myView.updateView(myAccount.getAmount());
+		
+		myView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myView.setVisible(true);
+	}
+}

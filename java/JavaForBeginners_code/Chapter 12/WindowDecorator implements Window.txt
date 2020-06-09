@@ -1,0 +1,19 @@
+import javax.swing.JFrame;
+public abstract class WindowDecorator implements Window {
+	private final Window window;
+	public WindowDecorator(Window window) {
+		this.window = window;
+	} 
+	public void setTitle(String title) {
+		window.setTitle(title);
+	}
+	public void addPanel(String message) {
+		window.addPanel(message);
+	}
+	public JFrame getJFrame() {
+		return window.getJFrame();
+	}
+	public Window getWindow() {
+		return window;
+	}
+}

@@ -1,0 +1,71 @@
+import javax.xml.namespace.QName;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.MimeHeaders;
+import javax.xml.soap.SOAPBody;
+import javax.xml.soap.SOAPBodyElement;
+import javax.xml.soap.SOAPConnection;
+import javax.xml.soap.SOAPConnectionFactory;
+import javax.xml.soap.SOAPElement;
+import javax.xml.soap.SOAPMessage;
+
+public class ClientWithoutWSDL {
+
+	private final static String SERVICE_HOST = "http://www.webserviceX.NET/";
+	private final static String SERVICE_METHOD = "GetQuote";
+	private final static String SERVICE_ENDPOINT = "stockquote.asmx";
+ 
+	private final static String STOCK_SYMBOL = "IBM";
+ 
+	public static void main(String args[]) {
+	 try {
+		 // Create a new SOAP connection
+		 SOAPConnectionFactory soapConnectionFactory =
+		 SOAPConnectionFactory.newInstance();
+		 SOAPConnection soapConnection = soapConnectionFactory.createConnection();
+
+		 // Send a SOAP Message to SOAP server
+		 // Send this message to http://www.webserviceX.NET/stockquote.asmx
+		 SOAPMessage soapResponse = soapConnection.call(
+			createSOAPRequest(STOCK_SYMBOL),
+			SERVICE_HOST + SERVICE_ENDPOINT);
+
+		 System.out.println("Received SOAP reply:");
+		 soapResponse.writeTo(System.out);
+		 System.out.println("\r\n");
+
+		 // Close the connection
+		 soapConnection.close();
+	  } catch (Exception e) {
+		 System.err.println("Fatal error occurred");
+		 e.printStackTrace();
+	  }
+   }
+
+	private static SOAPMessage createSOAPRequest(String stockSymbol) throws Exception {
+		// Construct a new SOAP request message
+		MessageFactory messageFactory = MessageFactory.newInstance();
+		SOAPMessage soapMessage = messageFactory.createMessage();
+
+		// Construct the SOAP "body" with the method arguments
+		SOAPBody soapBody = soapMessage.getSOAPBody();
+		QName bodyName = new QName(SERVICE_HOST, SERVICE_METHOD);
+		SOAPBodyElement bodyElement = soapBody.addBodyElement(bodyName);
+
+		SOAPElement soapBodyArgument1 = bodyElement.addChildElement("symbol");
+		soapBodyArgument1.addTextNode(stockSymbol); 
+
+		// Add a SOAP action header to the request
+		// Action: http://www.webserviceX.NET/GetQuote
+		MimeHeaders headers = soapMessage.getMimeHeaders();
+		headers.addHeader("SOAPAction", SERVICE_HOST + SERVICE_METHOD);
+
+		soapMessage.saveChanges();
+
+		// Print out the request message:
+		System.out.println("Sending SOAP request:");
+		soapMessage.writeTo(System.out);
+		System.out.printf("%n");[AU: same as before -TE ok]
+
+		return soapMessage;
+	}
+}

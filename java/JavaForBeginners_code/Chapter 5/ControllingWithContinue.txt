@@ -1,0 +1,36 @@
+public class ControllingWithContinue {
+	// array of employees, stored as Employee objects
+	static Employee[] allEmployees = new Employee[3];
+	
+	static void printManagedBy(String managerID){
+	    for (Employee emp : allEmployees){
+	        if (!emp.isManagedBy(managerID)){
+	        	continue;
+	        }
+	        System.out.println(emp.getName());
+	    }
+	}
+
+	public static void main(String[] args) {
+		Employee emp1 = new Employee();
+		emp1.name = "Barbara Wallace";
+		emp1.employeeID = "4972";
+		emp1.managerID = "7431";
+		
+		Employee emp2 = new Employee();
+		emp2.name = "Sarah Budding";
+		emp2.employeeID = "7431";
+		emp2.managerID = "1498";
+		
+		Employee emp3 = new Employee();
+		emp3.name = "Robert Danes";
+		emp3.employeeID = "6417";
+		emp3.managerID = "7431";
+		
+		allEmployees[0] = emp1;
+		allEmployees[1] = emp2;
+		allEmployees[2] = emp3;
+		
+		printManagedBy("7431");
+	}
+}

@@ -1,0 +1,11 @@
+class Person{
+	String name;
+	int age;
+	JobType job;
+
+	Person (String name, int age, JobType job){
+		this.name = name;
+		this.age = age;
+		this.job = job;
+	}
+}

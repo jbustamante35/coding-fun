@@ -1,0 +1,14 @@
+public class Book {
+	String title;
+	String author;
+	boolean isRead;
+	int numberOfReadings;
+
+	public void read(){
+		isRead = true;
+	}
+	
+	public void read(){
+		numberOfReadings++;
+	}
+}

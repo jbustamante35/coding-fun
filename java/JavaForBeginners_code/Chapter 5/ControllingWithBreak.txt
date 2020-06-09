@@ -1,0 +1,23 @@
+public class ControllingWithBreak {
+	// first example
+	// array of employee ID numbers, stored as Strings
+	static String[] employees = { "1485", "5498", "6412" };
+
+	// method to search for a specified employee ID
+	static void findEmployee(String employeeID) {
+		String myString = employeeID + " was not found.";
+		for (String emp : employees) {
+			if (emp.equals(employeeID)) {
+				myString = employeeID + " was found.";
+				break;
+			}
+		}
+		System.out.println(myString);
+	}
+
+	public static void main(String[] args) {
+		String emp1 = "5498", emp2 = "1234";
+		findEmployee(emp1);
+		findEmployee(emp2);
+	}
+}

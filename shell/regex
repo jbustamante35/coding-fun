@@ -1,0 +1,28 @@
+#!/bin/bash
+
+read -p "Validate Date : " date
+
+pat="^[0-9]{8}$"
+
+if [[ $date =~ $pat ]]; then
+	echo "$date is valid"
+else
+	echo "$date not valid"
+fi
+
+read -p "Enter 2 numbers: " n1 n2
+
+sum=$((n1 + n2))
+
+echo "$n1 + $n2 = $sum"
+
+read -sp "Enter password " pss
+
+if [ "$pss" == "piss" ]; then
+	echo "Enter"
+else
+	echo "Wrong Password"
+fi
+
+
+

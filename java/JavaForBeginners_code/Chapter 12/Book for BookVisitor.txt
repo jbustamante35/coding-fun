@@ -1,0 +1,27 @@
+public abstract class Book {
+	private String title;
+	// ...
+	
+	abstract public void accept(BookVisitor visitor);
+}
+
+public class FictionBook extends Book {
+	@Override
+	public void accept(BookVisitor visitor) {
+		visitor.visit(this);
+	}
+}
+
+public class AudioBook extends Book {
+	@Override
+	public void accept(BookVisitor visitor) {
+		visitor.visit(this);
+	}
+}
+
+public class NonFictionBook extends Book {
+	@Override
+	public void accept(BookVisitor visitor) {
+		visitor.visit(this);
+	}
+}

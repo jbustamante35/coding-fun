@@ -1,0 +1,26 @@
+#!/bin/bash
+
+f1="./file1"
+f2="./file2"
+
+if [ -e "$f1" ]; then
+	echo "$f1 exists"
+
+cat<< END
+Lots of ways to check file type
+arg : check
+-f  : normal file
+-r  : readable
+-w  : writable
+-x  : excecutable
+-d  : directory
+-p  : pipe
+-S  : network socket
+-L  : symbolic link
+-G  : owned by group
+-O  : owned by user
+END
+
+fi
+
+
